@@ -1,11 +1,25 @@
 import java.util.zip.ZipFile
 
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+}
+
 /*
  * This build file is part of the docToolchain
  */
 
 plugins {
-    id "org.asciidoctor.convert" version "2.4.0"
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
     id "org.aim42.htmlSanityCheck" version "1.1.6"
     id "com.github.ben-manes.versions" version "0.39.0"
     id "org.openapi.generator" version "4.3.1"

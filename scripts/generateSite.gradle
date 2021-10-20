@@ -8,11 +8,11 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'org.asciidoctor:asciidoctorj-diagram:2.0.2'
+        classpath 'org.asciidoctor:asciidoctorj-diagram:2.2.1'
     }
 }
 dependencies {
-    jbake 'org.asciidoctor:asciidoctorj-diagram:2.0.2'
+    jbake 'org.asciidoctor:asciidoctorj-diagram:2.2.1'
     jbake 'io.pebbletemplates:pebble:3.1.2'
 }
 
@@ -181,7 +181,7 @@ ${color 'green', 'for you?'}\n""",
             println color('red', e.message)
             if (e.message.startsWith("Not Found")) {
                 themeFolder.deleteDir()
-                throw new GradleException("Couldn't find theme. Did you specify the right URL?\n"+e.message)                
+                throw new GradleException("Couldn't find theme. Did you specify the right URL?\n"+e.message)
             } else {
                 throw new GradleException(e.message)
             }
