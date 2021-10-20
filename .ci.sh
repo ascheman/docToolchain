@@ -2,6 +2,8 @@
 
 set -o errtrace -o nounset -o pipefail -o errexit
 
+: ${SKIP_CLEAN_CHECK=""}
+
 # Enable build on Travis as well as on GH Actions
 set +u
 if test "${GITHUB_WORKFLOW}"; then
@@ -20,6 +22,9 @@ elif test "${TRAVIS_BRANCH}"; then
     PULL_REQUEST=${TRAVIS_PULL_REQUEST:-"false"}
     JDK_VERSION=${TRAVIS_JDK_VERSION}
     RUNNER_OS="ubuntu-latest"
+elif test "${IS_DOCKER}"; then
+    # All environment must be injected by `docker run`
+    :
 else
     echo "Cannot determine CI Server (Travis or Github)" >&2
     exit 1
@@ -103,14 +108,18 @@ check_for_clean_worktree() {
   echo "#        Check for clean worktree          #"
   echo "#                                          #"
   echo "############################################"
-  # To be executed as latest possible step, to ensures that there is no
-  # uncommitted code and there are no untracked files, which means .gitignore is
-  # complete and all code is part of a reviewable commit.
-  GIT_STATUS="$(git status --porcelain)"
-  if [[ ${GIT_STATUS} ]]; then
-    echo "Your worktree is not clean, there is either uncommitted code or there are untracked files:"
-    echo "${GIT_STATUS}"
-    exit 1
+  if test "${SKIP_CLEAN_CHECK}"; then
+      echo "Skipping check!!!"
+  else
+    # To be executed as latest possible step, to ensures that there is no
+    # uncommitted code and there are no untracked files, which means .gitignore is
+    # complete and all code is part of a reviewable commit.
+    GIT_STATUS="$(git status --porcelain)"
+    if [[ ${GIT_STATUS} ]]; then
+      echo "Your worktree is not clean, there is either uncommitted code or there are untracked files:"
+      echo "${GIT_STATUS}"
+      exit 1
+    fi
   fi
 }
 
