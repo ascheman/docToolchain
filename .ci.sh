@@ -120,7 +120,7 @@ create_doc () {
   echo "#        Create documentation              #"
   echo "#                                          #"
   echo "############################################"
-  echo "TRAVIS_BRANCH=${BRANCH}"
+  echo "BRANCH=${BRANCH}"
   if [ "${BRANCH}" == "ng" ] || [ "${BRANCH}" == "main-2.x" ] ; then
     echo ">>> exportMarkdown"
     ./dtcw local exportMarkdown
