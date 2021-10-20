@@ -42,3 +42,6 @@ src/docs/images/ppt
 # src/docs/test.adoc
 src/test/docs/excel/
 ~$*
+
+# Intermediate log files
+*.log
