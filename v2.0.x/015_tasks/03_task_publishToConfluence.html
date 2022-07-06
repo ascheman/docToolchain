@@ -53,17 +53,19 @@
       div.bg-light {
           background-color: rgba(127, 180, 224, 0.3) !important;
       }
-  span.tag {
+      //for blog posts
+
+  span.blogtag {
       border-radius: 10px;
       background-color: #30638E;
       color: white;
       padding: 5px 10px;
   }
-  span.tag a {
+  span.blogblogtag a {
       color: white;
       padding: 0
   }
-  span.tag span {
+  span.blogtag span {
       margin-left: 10px;
       border-radius: 10px;
       background-color: white;
@@ -142,63 +144,38 @@
 <body onload="prettyPrint()" class="td-section">
 <header>
 	
-
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-    <a class="navbar-brand" href="../">
+    <a class="navbar-brand" href="../index.html">
         <span class="navbar-logo"></span><span
             class="font-weight-bold">docToolchain</span>
     </a>
     <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
         <ul class="navbar-nav mt-2 mt-lg-0">
-    <li class="nav-item mr-4 mb-2 mb-lg-0"><img src="../images/status.png" width="16" height="16" onerror="this.style.display='none'"></li>
-            <!--
-            [news:[[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]], ea:[[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]], manual:[[title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html]], ADRs:[[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]], development:[[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]], tasks:[[title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html]], tutorial:[[title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html], [title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html]], -:[[title:search, order:0, filename:null, uri:search.html]]]
-            -->
+    <li class="nav-item mr-4 mb-2 mb-lg-0"><!--img src="../images/status.png" alt="status" width="16" height="16" onerror="this.style.display='none'"--></li>
 
             <li class="nav-item mr-4 mb-2 mb-lg-0">
-                <a class="nav-link " href="../010_manual/010_introduction_and_goals.html"><span>Manual</span></a>
+                <a class="nav-link " href="../10_about/10_about-the-project.html"><span>About</span></a>
             </li>
-            <!--
-            [news:[[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]], ea:[[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]], manual:[[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]], ADRs:[[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]], development:[[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]], tasks:[[title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html]], tutorial:[[title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html], [title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html]], -:[[title:search, order:0, filename:null, uri:search.html]]]
 
-            [manual:[Manual, [[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]]], tasks:[Tasks, [[title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html]]], tutorial:[Tutorial, [[title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html], [title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html]]], development:[Developer, [[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]]], news:[News, [[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]]], ADRs:[-, [[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]]], ea:[-, [[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]]], ppt:[-, []], blog:[-, []], -:[-, [[title:search, order:0, filename:null, uri:search.html]]]]
-            -->
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link " href="../010_manual/20_install.html"><span>User Docs</span></a>
+            </li>
 
             <li class="nav-item mr-4 mb-2 mb-lg-0">
                 <a class="nav-link active" href="../015_tasks/03_tasks.html"><span>Tasks</span></a>
             </li>
-            <!--
-            [news:[[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]], ea:[[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]], manual:[[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]], ADRs:[[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]], development:[[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]], tasks:[[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]], tutorial:[[title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html], [title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html]], -:[[title:search, order:0, filename:null, uri:search.html]]]
-
-            [manual:[Manual, [[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]]], tasks:[Tasks, [[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]]], tutorial:[Tutorial, [[title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html], [title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html]]], development:[Developer, [[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]]], news:[News, [[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]]], ADRs:[-, [[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]]], ea:[-, [[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]]], ppt:[-, []], blog:[-, []], -:[-, [[title:search, order:0, filename:null, uri:search.html]]]]
-            -->
 
             <li class="nav-item mr-4 mb-2 mb-lg-0">
                 <a class="nav-link " href="../020_tutorial/010_Install.html"><span>Tutorial</span></a>
             </li>
-            <!--
-            [news:[[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]], ea:[[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]], manual:[[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]], ADRs:[[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]], development:[[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]], tasks:[[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]], tutorial:[[title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html]], -:[[title:search, order:0, filename:null, uri:search.html]]]
-
-            [manual:[Manual, [[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]]], tasks:[Tasks, [[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]]], tutorial:[Tutorial, [[title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html]]], development:[Developer, [[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html]]], news:[News, [[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]]], ADRs:[-, [[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]]], ea:[-, [[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]]], ppt:[-, []], blog:[-, []], -:[-, [[title:search, order:0, filename:null, uri:search.html]]]]
-            -->
 
             <li class="nav-item mr-4 mb-2 mb-lg-0">
-                <a class="nav-link " href="../025_development/010_setup_dev_env.html"><span>Developer</span></a>
+                <a class="nav-link " href="../025_development/010_setup_dev_env.html"><span>For Devs</span></a>
             </li>
-            <!--
-            [news:[[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]], ea:[[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]], manual:[[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]], ADRs:[[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]], development:[[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html]], tasks:[[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]], tutorial:[[title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html]], -:[[title:search, order:0, filename:null, uri:search.html]]]
-
-            [manual:[Manual, [[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]]], tasks:[Tasks, [[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]]], tutorial:[Tutorial, [[title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html]]], development:[Developer, [[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html]]], news:[News, [[title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Overview, order:0, filename:null, uri:030_news/index.html]]], ADRs:[-, [[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]]], ea:[-, [[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]]], ppt:[-, []], blog:[-, []], -:[-, [[title:search, order:0, filename:null, uri:search.html]]]]
-            -->
 
             <li class="nav-item mr-4 mb-2 mb-lg-0">
                 <a class="nav-link " href="../030_news/index.html"><span>News</span></a>
             </li>
-            <!--
-            [news:[[title:Overview, order:0, filename:null, uri:030_news/index.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html]], ea:[[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]], manual:[[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]], ADRs:[[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]], development:[[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html]], tasks:[[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]], tutorial:[[title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html]], -:[[title:search, order:0, filename:null, uri:search.html]]]
-
-            [manual:[Manual, [[title:Introduction and Goals, order:010, filename:null, uri:010_manual/010_introduction_and_goals.html], [title:How to install docToolchain, order:020, filename:null, uri:010_manual/020_install.html], [title:Features, order:025, filename:null, uri:010_manual/025_features.html], [title:Further Reading, order:030, filename:null, uri:010_manual/030_further_reading.html], [title:Acknowledgements and Contributors, order:040, filename:null, uri:010_manual/040_contributors.html], [title:FAQ: Frequently asked Questions, order:050, filename:null, uri:010_manual/050_Frequently_asked_Questions.html], [title:Appendix A: Configuration, order:100, filename:null, uri:010_manual/100_config.html]]], tasks:[Tasks, [[title:Overview of available Tasks, order:03, filename:null, uri:015_tasks/03_tasks.html], [title:autobuildSite, order:03, filename:null, uri:015_tasks/03_task_autobuildSite.html], [title:collectIncludes, order:03, filename:null, uri:015_tasks/03_task_collectIncludes.html], [title:convertToDocx, order:03, filename:null, uri:015_tasks/03_task_convertToDocx.html], [title:convertToEpub, order:03, filename:null, uri:015_tasks/03_task_convertToEpub.html], [title:copyThemes, order:03, filename:null, uri:015_tasks/03_task_copy_themes.html], [title:createReferenceDoc, order:03, filename:null, uri:015_tasks/03_task_createReferenceDoc.html], [title:dependencyUpdates, order:03, filename:null, uri:015_tasks/03_task_dependencyUpdates.html], [title:downloadTemplate, order:03, filename:null, uri:015_tasks/03_task_downloadTemplate.html], [title:exportChangeLog, order:03, filename:null, uri:015_tasks/03_task_exportChangeLog.html], [title:exportContributors, order:03, filename:null, uri:015_tasks/03_task_exportContributors.html], [title:exportDrawIo, order:03, filename:null, uri:015_tasks/03_task_exportDrawIo.html], [title:exportEA, order:03, filename:null, uri:015_tasks/03_task_exportEA.html], [title:exportExcel, order:03, filename:null, uri:015_tasks/03_task_exportExcel.html], [title:exportJiraIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraIssues.html], [title:exportJiraSprintChangelogIssues, order:03, filename:null, uri:015_tasks/03_task_exportJiraSprintChangelog.html], [title:exportMarkdown, order:03, filename:null, uri:015_tasks/03_task_exportMarkdown.html], [title:exportMetrics, order:03, filename:null, uri:015_tasks/03_task_exportMetrics.html], [title:exportOpenAPI, order:03, filename:null, uri:015_tasks/03_task_exportOpenApi.html], [title:exportPPT, order:03, filename:null, uri:015_tasks/03_task_exportPPT.html], [title:exportVisio, order:03, filename:null, uri:015_tasks/03_task_exportVisio.html], [title:fixEncoding, order:03, filename:null, uri:015_tasks/03_task_fixencoding.html], [title:generateDeck, order:03, filename:null, uri:015_tasks/03_task_generateDeck.html], [title:generateDocbook, order:03, filename:null, uri:015_tasks/03_task_generateDocBook.html], [title:generateHTML, order:03, filename:null, uri:015_tasks/03_task_generateHTML.html], [title:generatePDF, order:03, filename:null, uri:015_tasks/03_task_generatePDF.html], [title:generateSite, order:03, filename:null, uri:015_tasks/03_task_generateSite.html], [title:htmlSanityCheck, order:03, filename:null, uri:015_tasks/03_task_htmlSanityCheck.html], [title:prependFilename, order:03, filename:null, uri:015_tasks/03_task_prependFilename.html], [title:previewSite, order:03, filename:null, uri:015_tasks/03_task_previewSite.html], [title:publishToConfluence, order:03, filename:null, uri:015_tasks/03_task_publishToConfluence.html]]], tutorial:[Tutorial, [[title:Install docToolchain, order:010, filename:null, uri:020_tutorial/010_Install.html], [title:arc42 Template, order:020, filename:null, uri:020_tutorial/020_arc42.html], [title:generateHTML &amp; generatePDF, order:030, filename:null, uri:020_tutorial/030_generateHTML.html], [title:generateSite, order:040, filename:null, uri:020_tutorial/040_generateSite.html], [title:How to generate docs from multiple repositories, order:050, filename:null, uri:020_tutorial/050_multipleRepositories.html], [title:How to generate docs from multiple repositories, order:060, filename:null, uri:020_tutorial/060_CI-CD-Deployment.html], [title:Diagrams: Diagrams.net, order:100, filename:null, uri:020_tutorial/100_diagrams.net.html]]], development:[Developer, [[title:Setup Development Environment, order:010, filename:null, uri:025_development/010_setup_dev_env.html], [title:How to run Tests, order:020, filename:null, uri:025_development/020_run_tests.html], [title:Create new Release, order:030, filename:null, uri:025_development/030_create_new_release.html], [title:Debugging, order:040, filename:null, uri:025_development/040_debugging.html]]], news:[News, [[title:Overview, order:0, filename:null, uri:030_news/index.html], [title:Last Release Candidate, order:16322688, filename:null, uri:030_news/2021/last-release-candidate.html], [title:Release v2.0.0, order:16323552, filename:null, uri:030_news/2021/2.0.0-release.html], [title:Release v2.0.1, order:16334784, filename:null, uri:030_news/2021/2.0.1-release.html]]], ADRs:[-, [[title:ADR-2-anotherTest.ad, order:-1, filename:null, uri:050_ADRs/ADR-2-anotherTest.html], [title:ADR-1-firstTest.adoc, order:-1, filename:null, uri:050_ADRs/ADR-1-firstTest.html]]], ea:[-, [[title:readme.ad, order:-1, filename:null, uri:ea/readme.html], [title:issue2.ad, order:-1, filename:null, uri:ea/issue2.html], [title:issue1.ad, order:-1, filename:null, uri:ea/issue1.html], [title:Use_Cases_links.ad, order:-1, filename:null, uri:ea/Use_Cases_links.html], [title:UseCases.ad, order:-1, filename:null, uri:ea/UseCases.html], [title:Architect_notes_issue2.ad, order:-1, filename:null, uri:ea/Architect_notes_issue2.html], [title:Architect_notes.ad, order:-1, filename:null, uri:ea/Architect_notes.html], [title:Activity_notes_issue1.ad, order:-1, filename:null, uri:ea/Activity_notes_issue1.html], [title:Activity_notes.ad, order:-1, filename:null, uri:ea/Activity_notes.html], [title:Use_Cases_notes_UseCases.ad, order:-1, filename:null, uri:ea/Use_Cases_notes_UseCases.html], [title:Use_Cases_notes.ad, order:-1, filename:null, uri:ea/Use_Cases_notes.html], [title:Use_Cases_links_issue2.ad, order:-1, filename:null, uri:ea/Use_Cases_links_issue2.html]]], ppt:[-, []], blog:[-, []], -:[-, [[title:search, order:0, filename:null, uri:search.html]]]]
-            -->
 
         </ul>
     </div>
@@ -242,7 +219,7 @@
                             
                             <li class="td-sidebar-nav__section-title">
                                 <a class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section "
-                                   href="../015_tasks/03_tasks.html">Overview of available Tasks</a>
+                                   href="../015_tasks/03_tasks.html">What Is a Task?</a>
                             </li>
                             
                             
@@ -442,24 +419,26 @@
 			<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
 				<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
 					
+
         <a href="https://github.com/doctoolchain/doctoolchain/edit/ng/src/docs/015_tasks/03_task_publishToConfluence.adoc"
            target="_blank"><i class="fa fa-edit fa-fw"></i> Improve this doc</a>
-        <!--a href="https://github.com/google/docsy-example/new/master/content/en/docs/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A"
-           target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a-->
-        <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:015_tasks/03_task_publishToConfluence.adoc" target="_blank"><i
-                class="fab fa-github fa-fw"></i> Create an issue</a>
-        <!--a href="https://github.com/google/docsy/issues/new" target="_blank"><i
-                class="fas fa-tasks fa-fw"></i> Create project issue</a-->
-        <!--a href="https://example.docsy.dev/docs/_print/" id="print"><i class="fa fa-print fa-fw"></i> Print
-        entire section</a-->
 
+
+        <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/doctoolchain/doctoolchain/edit/ng/src/docs/015_tasks/03_task_publishToConfluence.adoc%0A%23branch: ng" target="_blank"><i
+                class="fab fa-github fa-fw"></i> Create an issue</a>
+
+        
         <hr />
         <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_publishtoconfluence">publishToConfluence</a>
 <ul class="sectlevel2">
+<li><a href="#_at_a_glance">At a Glance</a></li>
+<li><a href="#_about_this_task">About This Task</a></li>
+<li><a href="#_special_features">Special Features</a></li>
 <li><a href="#_configuration">Configuration</a></li>
+<li><a href="#_attributes">Attributes</a></li>
 <li><a href="#_css_styling">CSS Styling</a></li>
 <li><a href="#_source">Source</a></li>
 </ul>
@@ -494,38 +473,34 @@
 <h2 id="_publishtoconfluence">publishToConfluence</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="image gravatar"><img src="https://www.gravatar.com/avatar/cc5f3bf8b3cb91c985ed4fd046aa451d?d=identicon" alt="Ralf D. Müller" width="32" height="32" title="Ralf D. Müller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/518a75fcbe5adea38aa4bec267d7572b?d=identicon" alt="Nikolay Orozov" width="32" height="32" title="Nikolay Orozov"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/eedf6f2d4b31cc4e49a7aa4fc55f51d3?d=identicon" alt="Ralf D. Müller" width="32" height="32" title="Ralf D. Müller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/b55e260be513eedfb745afb36248b8ec?d=identicon" alt="Vladi" width="32" height="32" title="Vladi"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/6dd2fe167fd7d2a84322787e3428d14e?d=identicon" alt="Joseph Staub" width="32" height="32" title="Joseph Staub"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/a8ff23c0e396f621ed233027f21c27ea?d=identicon" alt="Peter Stange" width="32" height="32" title="Peter Stange"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/7107bc30257a84fd371a188bda07309f?d=identicon" alt="oliver drewes" width="32" height="32" title="oliver drewes"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/415bf2233be007b088ca81b749f02071?d=identicon" alt="Nils Mahlstaedt" width="32" height="32" title="Nils Mahlstaedt"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/be47969496f94a5a89159d70cd82bda0?d=identicon" alt="sabatmonk" width="32" height="32" title="sabatmonk"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/5107bc93f3e4d103ca06f4e68a64b38?d=identicon" alt="Heiko Stehli" width="32" height="32" title="Heiko Stehli"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/4280fc350b2b3cb323d151be608be3f8?d=identicon" alt="Alexander Herrmann" width="32" height="32" title="Alexander Herrmann"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/3c015f3ee9960d842c195993cbb91cff?d=identicon" alt="Tim Riemer" width="32" height="32" title="Tim Riemer"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/aacd09e76c0affa36f76f8ef337a1536?d=identicon" alt="Luis Muniz" width="32" height="32" title="Luis Muniz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/6c5a117679f7101b5de26dd25a2a8e98?d=identicon" alt="Dierk Höppner" width="32" height="32" title="Dierk Höppner"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/e7d9e6618a36e94b35d43cbd2925aee0?d=identicon" alt="bit-jkraushaar" width="32" height="32" title="bit-jkraushaar"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/5f528a3f6814d28b583f31842e3e8d9e?d=identicon" alt="Alexander Schwartz" width="32" height="32" title="Alexander Schwartz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/d2017e2cab333d23e2c7285cb62fdc43?d=identicon" alt="Constantin" width="32" height="32" title="Constantin"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/6c384e5d2b684c60fc8f062d75dae3f7?d=identicon" alt="Alfon" width="32" height="32" title="Alfon"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/2dc2929d0609d6338d2794446156f312?d=identicon" alt="Thomas Grabietz" width="32" height="32" title="Thomas Grabietz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/69124393772349d32fb9fe975545757d?d=identicon" alt="Lars Francke" width="32" height="32" title="Lars Francke"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/73252f762a6ec69bb59a23c8ff861c4a?d=identicon" alt="David M. Carr" width="32" height="32" title="David M. Carr"></span></p>
+<p><span class="image gravatar"><img src="https://www.gravatar.com/avatar/1a867bc36c58b6d45b3dde4d87f9410a?d=identicon" alt="Martin" width="32" height="32" title="Martin"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/cc5f3bf8b3cb91c985ed4fd046aa451d?d=identicon" alt="Ralf D. Müller" width="32" height="32" title="Ralf D. Müller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/fc4dffda746759e7e98470ed9cfcc074?d=identicon" alt="Jan-Niklas Vierheller" width="32" height="32" title="Jan-Niklas Vierheller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/c3a42a44fe24014c947ff435ca206081?d=identicon" alt="Jody Winter" width="32" height="32" title="Jody Winter"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/70d15b356579ae85bc72b68af52946c2?d=identicon" alt="Schrotti" width="32" height="32" title="Schrotti"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/26543494012e9d554d707ae10121bcf3?d=identicon" alt="Denny Israel" width="32" height="32" title="Denny Israel"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/c9b0a22075cd70224fd219e3257a8ce0?d=identicon" alt="Jeremie Bresson" width="32" height="32" title="Jeremie Bresson"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/518a75fcbe5adea38aa4bec267d7572b?d=identicon" alt="Nikolay Orozov" width="32" height="32" title="Nikolay Orozov"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/eedf6f2d4b31cc4e49a7aa4fc55f51d3?d=identicon" alt="Ralf D. Müller" width="32" height="32" title="Ralf D. Müller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/b55e260be513eedfb745afb36248b8ec?d=identicon" alt="Vladi" width="32" height="32" title="Vladi"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/6dd2fe167fd7d2a84322787e3428d14e?d=identicon" alt="Joseph Staub" width="32" height="32" title="Joseph Staub"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/a8ff23c0e396f621ed233027f21c27ea?d=identicon" alt="Peter Stange" width="32" height="32" title="Peter Stange"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/7107bc30257a84fd371a188bda07309f?d=identicon" alt="oliver drewes" width="32" height="32" title="oliver drewes"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/415bf2233be007b088ca81b749f02071?d=identicon" alt="Nils Mahlstaedt" width="32" height="32" title="Nils Mahlstaedt"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/be47969496f94a5a89159d70cd82bda0?d=identicon" alt="sabatmonk" width="32" height="32" title="sabatmonk"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/5107bc93f3e4d103ca06f4e68a64b38?d=identicon" alt="Heiko Stehli" width="32" height="32" title="Heiko Stehli"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/4280fc350b2b3cb323d151be608be3f8?d=identicon" alt="Alexander Herrmann" width="32" height="32" title="Alexander Herrmann"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/3c015f3ee9960d842c195993cbb91cff?d=identicon" alt="Tim Riemer" width="32" height="32" title="Tim Riemer"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/aacd09e76c0affa36f76f8ef337a1536?d=identicon" alt="Luis Muniz" width="32" height="32" title="Luis Muniz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/6c5a117679f7101b5de26dd25a2a8e98?d=identicon" alt="Dierk Höppner" width="32" height="32" title="Dierk Höppner"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/e7d9e6618a36e94b35d43cbd2925aee0?d=identicon" alt="bit-jkraushaar" width="32" height="32" title="bit-jkraushaar"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/5f528a3f6814d28b583f31842e3e8d9e?d=identicon" alt="Alexander Schwartz" width="32" height="32" title="Alexander Schwartz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/d2017e2cab333d23e2c7285cb62fdc43?d=identicon" alt="Constantin" width="32" height="32" title="Constantin"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/6c384e5d2b684c60fc8f062d75dae3f7?d=identicon" alt="Alfon" width="32" height="32" title="Alfon"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/2dc2929d0609d6338d2794446156f312?d=identicon" alt="Thomas Grabietz" width="32" height="32" title="Thomas Grabietz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/69124393772349d32fb9fe975545757d?d=identicon" alt="Lars Francke" width="32" height="32" title="Lars Francke"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/73252f762a6ec69bb59a23c8ff861c4a?d=identicon" alt="David M. Carr" width="32" height="32" title="David M. Carr"></span></p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>6 minutes to read</pre>
+<pre>7 minutes to read</pre>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_at_a_glance">At a Glance</h3>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ea/Manual/publishToConfluence.png" alt="publishToConfluence">
 </div>
 </div>
-<div class="paragraph">
-<p>This target takes the generated HTML file, splits it by headline and pushes it to Confluence.
-This enables you to use the docs-as-code approach while getting feedback from non-techies through Confluence comments.
-And it fulfills the "requirement" of "&#8230;&#8203; but all documentation is in Confluence".</p>
 </div>
+<div class="sect2">
+<h3 id="_about_this_task">About This Task</h3>
 <div class="paragraph">
-<p>Special features:</p>
+<p>This task takes a generated HTML file, splits it by headline, and pushes it to <a href="https://www.atlassian.com/software/confluence">Confluence</a>.
+This lets you use the <a href="https://www.writethedocs.org/guide/docs-as-code/">docs-as-code approach</a> even if your organisation insists on using Confluence as its main document repo.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>[source]</code>-blocks are converted to code-macro blocks in confluence.</p>
-</li>
-<li>
-<p>only pages and images which have changed between task runs are really published and hence only for those changes notifications are sent to watchers. This is quite important - otherwise watchers are easily annoyed by too many notifications.</p>
-</li>
-<li>
-<p><code>:keywords:</code> Keywords are attached as labels to every generated Confluence page. The rules for page labels should be kept in mind. See <a href="https://confluence.atlassian.com/doc/add-remove-and-search-for-labels-136419.html" class="bare">https://confluence.atlassian.com/doc/add-remove-and-search-for-labels-136419.html</a>. Several keywords are allowed. They must be separated by comma, e.g. <code>:keywords: label_1, label-2, label3, &#8230;&#8203;</code>. Labels (keywords) must not contain a space character! Use '_' or '-'.</p>
-</li>
-</ul>
+</div>
+<div class="sect2">
+<h3 id="_special_features">Special Features</h3>
+<div class="sect3">
+<h4 id="_easy_code_block_conversion">Easy Code Block Conversion</h4>
+<div class="paragraph">
+<p><code>[source]</code>-blocks are converted to code-macro blocks in Confluence.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -534,156 +509,372 @@ And it fulfills the "requirement" of "&#8230;&#8203; but all documentation is in
 <div class="title">Note</div>
 </td>
 <td class="content">
-code-macro-blocks in confluence render an error if the language attribute contains an unknown language.
-See <a href="https://confluence.atlassian.com/doc/code-block-macro-139390.html" class="bare">https://confluence.atlassian.com/doc/code-block-macro-139390.html</a> for a list of valid language and how to add further languages.
+Code-macro blocks in Confluence throw an error if the language attribute contains an unknown language.
+Get a list of valid languages (and learn how to add others) <a href="https://confluence.atlassian.com/doc/code-block-macro-139390.html">here</a>.
 </td>
 </tr>
 </table>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_minimal_impact_on_non_techie_confluence_users">Minimal Impact on Non-Techie Confluence Users</h4>
+<div class="paragraph">
+<p>Only pages and images that changed between task runs are published, and only those changes are notified to page watchers, cutting down on 'spam'.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_keywords_automatically_attached_as_labels">Keywords Automatically Attached as Labels</h4>
+<div class="paragraph">
+<p><code>:keywords:</code> are attached as labels to every Confluence page generated using the <code>publishToConfluence</code> task.
+See <a href="https://confluence.atlassian.com/doc/add-remove-and-search-for-labels-136419.html">Atlassian&#8217;s own guidelines on labels</a>.
+Several keywords are allowed, and they must be separated by commas. For example: <code>:keywords: label_1, label-2, label3, &#8230;&#8203;</code>.
+Labels (keywords) must not contain a space character. Use either '_' or '-'.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_configuration">Configuration</h3>
 <div class="paragraph">
-<p>We tried to make the configuration self-explaining, but there are always some note to add.</p>
+<p>We tried to make the configuration self-explanatory, but below is some more information about each config option.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">ancestorId</dt>
-<dd>
-<p>this is the page ID of the parent page to which you want your docs to be published.
-Go to this page, click on edit and the needed ID will show up in the URL.
-Specify the ID as string within the config file.</p>
-</dd>
-<dt class="hdlist1">api</dt>
-<dd>
-<p>for cloud instances, <code>[context]</code> is <code>wiki</code></p>
-</dd>
-<dt class="hdlist1">preambleTitle</dt>
-<dd>
-<p>the title of the page containing the preamble (everything the first second level heading). Default is 'arc42'</p>
-</dd>
-<dt class="hdlist1">disableToC</dt>
-<dd>
-<p>This boolean configuration define if the Table of Content (ToC) is disabled from the page once uploaded in confluence. (it is false by default, so the ToC is active)</p>
-</dd>
-<dt class="hdlist1">pagePrefix/pageSuffix</dt>
-<dd>
-<p>Confluence can&#8217;t handle two pages with the same name.
-Moreover, the script matches pages regardless of the case. It will thus refuse to replace a page whose title only differs in case with an existing page.
-So you should create a new confluence space for each piece of larger documentation.
-If you are restricted and can&#8217;t create new spaces, you can use this <code>pagePrefix</code>/<code>pageSuffix</code> to define a prefix/suffix for this doc so that it doesn&#8217;t conflict with other page names.</p>
-</dd>
-<dt class="hdlist1">credentials</dt>
-<dd>
-<p>Use username and password or even better username and api-token.
+<div class="paragraph">
+<p><strong>input</strong></p>
+</div>
+<div class="paragraph">
+<p>is an array of files to upload to Confluence with the ability
+to configure a different parent page for each file.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attributes">Attributes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>file</code>: absolute or relative path to the asciidoc generated html file to be exported</p>
+</li>
+<li>
+<p><code>url</code>: absolute URL to an asciidoc generated html file to be exported</p>
+</li>
+<li>
+<p><code>ancestorName</code> (optional): the name of the parent page in Confluence as string;
+this attribute has priority over ancestorId, but if page with given name doesn&#8217;t exist,
+ancestorId will be used as a fallback</p>
+</li>
+<li>
+<p><code>ancestorId</code> (optional): the id of the parent page in Confluence as string; leave this empty
+if a new parent shall be created in the space</p>
+</li>
+<li>
+<p><code>preambleTitle</code> (optional): the title of the page containing the preamble (everything
+before the first second level heading). Default is 'arc42'</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following four keys can also be used in the global section below</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>spaceKey</code> (optional): page specific variable for the key of the confluence space to write to</p>
+</li>
+<li>
+<p><code>createSubpages</code> (optional): page specific variable to determine whether ".sect2" sections shall be split from the current page into subpages</p>
+</li>
+<li>
+<p><code>pagePrefix</code> (optional): page specific variable, the pagePrefix will be a prefix for the page title and it&#8217;s sub-pages
+use this if you only have access to one confluence space but need to store several
+pages with the same title - a different pagePrefix will make them unique</p>
+</li>
+<li>
+<p><code>pageSuffix</code> (optional): same usage as prefix but appended to the title and it&#8217;s subpages</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>only 'file' or 'url' is allowed. If both are given, 'url' is ignored</p>
+</div>
+<div class="paragraph">
+<p><strong>ancestorId</strong></p>
+</div>
+<div class="paragraph">
+<p>The page ID of the parent page where you want your docs to be published.
+Go to this page, click <strong>Edit</strong> and the required ID will show up in the URL.
+Specify the ID as a string within the config file.</p>
+</div>
+<div class="paragraph">
+<p><strong>api</strong></p>
+</div>
+<div class="paragraph">
+<p>For cloud instances, <code>[context]</code> is <code>wiki</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>preambleTitle</strong></p>
+</div>
+<div class="paragraph">
+<p>The page title. Contains the preamble (everything except the first second-level heading). Default is 'arc42'.</p>
+</div>
+<div class="paragraph">
+<p><strong>disableToC</strong></p>
+</div>
+<div class="paragraph">
+<p>This boolean configuration determines whether or not the table of contents (ToC) is disabled on the page once uploaded to Confluence. <code>false</code> by default, so the ToC is active.</p>
+</div>
+<div class="paragraph">
+<p><strong>pagePrefix/pageSuffix</strong></p>
+</div>
+<div class="paragraph">
+<p>Confluence can&#8217;t handle two pages with the same name - even with different casing (lowercase, UPPERCASE, a mix).
+This script matches pages regardless of case and refuses to replace a page whose name differs from an existing page only by casing.
+Ideally, you should create a new Confluence space for each piece of larger documentation.
+If you are restricted and can&#8217;t create new spaces, you can use <code>pagePrefix</code>/<code>pageSuffix</code> to define a prefix/suffix for the doc so that it doesn&#8217;t conflict with other page names.</p>
+</div>
+<div class="paragraph">
+<p><strong>credentials</strong></p>
+</div>
+<div class="paragraph">
+<p>Use username and password, or even better - username and api-token.
 You can create new API-tokens in <a href="https://confluence.atlassian.com/cloud/api-tokens-938839638.html">your profile</a>.
-To avoid having your password or api-token versioned through git, you can store it outside of this configuration as environment variable or in another file - the key here is that the config file is a groovy script.
-e.g. you can do things like <code>credentials = "user:${new File("/home/me/apitoken").text}".bytes.encodeBase64().toString()</code></p>
-</dd>
-</dl>
+To avoid having your password or API-token versioned through Git, you can store them outside of this configuration either as an environment variable or in another file.
+The key here is that the config file is a groovy script.
+For example, you can do things like <code>credentials = "user:${new File("/home/me/apitoken").text}".bytes.encodeBase64().toString()</code></p>
 </div>
 <div class="paragraph">
-<p>To simplify the injection of credentials from external sources there is a fallback. Should you leave the credentials field empty,
-the variables <code>confluenceUser</code> and <code>confluencePassword</code> from the build environment will be used for authentication. You can set these through any means
-allowed by gradle like the <code>gradle.properties</code> file in the project or your home directory, environment variables or command-line flags.
-For all ways to set these variables, have a look at the <a href="https://docs.gradle.org/current/userguide/build_environment.html">gradle manual</a>.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">apikey</dt>
-<dd>
-<p>In cases where you have to use full user authorization because of internal confluence permission handling, you need to add the API-token in addition to the credentials.
-The API-token cannot be added to the credentials as it is used for user and password exchange.
-Therefore the API-token can be added as parameter apikey, which makes the addition of the token as a separate header field with key: <code>keyId</code> and value of <code>apikey</code>.
-Example including storing of the real value outside this configuration: <code>apikey = "${new File("/home/me/apitoken").text}"</code>.</p>
-</dd>
-<dt class="hdlist1">extraPageContent</dt>
-<dd>
-<p>If you need to prefix your pages with a warning that this is generated content - this is the right place.</p>
-</dd>
-<dt class="hdlist1">enableAttachments</dt>
-<dd>
-<p>If value is set to <strong>true</strong>, your links to local file references will be uploaded as attachments. The current implementation only supports a single folder. This foldername will be used as a prefix to validate if your file should be uploaded or not.
-In case you enable this feature, and use a folder which starts with "attachment*", an adaption of this prefix is required.</p>
-</dd>
-<dt class="hdlist1">jiraServerId</dt>
-<dd>
-<p>the jira server id your confluence instance is connected to. If value is set, all anchors pointing to a jira ticket will be replaced by the confluence jira macro.
-To function properly jiraRoot has to be configured (see <a href="#exportJiraIssues">[exportJiraIssues]</a>).</p>
-</dd>
-</dl>
+<p>There is a fallback if you need to simplify the injection of credentials from external sources.
+If you leave the credentials field empty, the variables <code>confluenceUser</code> and <code>confluencePass</code> from the build environment will be used for authentication.
+You can set these through any means allowed by gradle, such as the <code>gradle.properties</code> file in the project or your home directory, environment variables or command-line flags.
+For all the ways to set these variables, take a look at <a href="https://docs.gradle.org/current/userguide/build_environment.html">the gradle user guide</a>.</p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><strong>apikey</strong></p>
 </div>
 <div class="paragraph">
-<p>All files to attach will require to be linked inside the document.</p>
+<p>In situations where you have to use full user authorisation because of internal Confluence permission handling, you&#8217;ll need to add the API-token in addition to the credentials.
+The API-token cannot be added to the credentials because it&#8217;s used for user and password exchange.
+Therefore the API-token can be added as parameter <code>apikey</code>, which makes the addition of the token a separate header field with key: <code>keyId</code> and value of <code>apikey</code>.
+An example (including storing of the real value outside this configuration) is: <code>apikey = "${new File("/home/me/apitoken").text}"</code>.</p>
 </div>
 <div class="paragraph">
-<p><code>link:attachement/myfolder/myfile.json[My API definition]</code></p>
+<p><strong>extraPageContent</strong></p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">attachmentPrefix</dt>
-<dd>
-<p>The expected foldername of your output dir. <strong>Default</strong>: <code>attachment</code></p>
-</dd>
-<dt class="hdlist1">proxy</dt>
-<dd>
-<p>If you need to provide a proxy to access Confluence, you may set a map with keys <code>host</code> (e.g. <code>'my.proxy.com'</code>), <code>port</code> (e.g. <code>'1234'</code>) and <code>schema</code> (e.g. <code>'http'</code>) of your proxy.</p>
-</dd>
-<dt class="hdlist1">useOpenapiMacro</dt>
-<dd>
-<p>If this option is present and equal to "confluence-open-api" then any source block marked with class openapi will be wrapped in Elitesoft Swagger Editor macro:  (see <a href="https://marketplace.atlassian.com/apps/1218914/open-api-swagger-editor-for-confluence">Elitesoft Swagger Editor</a>)<br>
-For backward compatibility: If this option is present and equal to <code>true</code>, then again the Elitesoft Swagger Editor macro will be used.<br>
-If this option is present and equal to "open-api" then any source block marked with class openapi will be wrapped in Open API Documentation for Confluence macro:  (see <a href="https://marketplace.atlassian.com/apps/1215176/open-api-documentation-for-confluence">Open API Documentation for Confluence</a>). A download source (yaml) button is shown by default.<br>
-This is how you&#8217;d include your openapi YAML file:<br></p>
+<div class="paragraph">
+<p>If you need to prefix your pages with a warning stating that 'this is generated content', this is where you do it.</p>
+</div>
+<div class="paragraph">
+<p><strong>enableAttachments</strong></p>
+</div>
+<div class="paragraph">
+<p>If value is set to <code>true</code>, any links to local file references will be uploaded as attachments. The current implementation only supports a single folder, the name of which will be used as a prefix to validate whether or not your file should be uploaded.
+If you enable this feature, and use a folder which starts with 'attachment', an adaption of this prefix is required.</p>
+</div>
+<div class="paragraph">
+<p><strong>jiraServerId</strong>
+Stores the Jira server ID that your Confluence instance is connected to. If a value is set, all anchors pointing to a Jira ticket will be replaced by the Confluence Jira macro.
+To function properly, <code>jiraRoot</code> must be configured (see <a href="03_task_exportJiraIssues.html"><code>exportJiraIssues</code></a>). Here&#8217;s an example:</p>
+</div>
+<div class="paragraph">
+<p>All files to attach will need to be linked inside the document:
+<code>link:attachment/myfolder/myfile.json[My API definition]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>attachmentPrefix</strong></p>
+</div>
+<div class="paragraph">
+<p>Stores the expected foldername of your output directory. Default is <code>attachment</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>proxy</strong></p>
+</div>
+<div class="paragraph">
+<p>If you need to provide proxy to access Confluence, you can set a map with the keys <code>host</code> (e.g. <code>'my.proxy.com'</code>), <code>port</code> (e.g. <code>'1234'</code>) and <code>schema</code> (e.g. <code>'http'</code>) of your proxy.</p>
+</div>
+<div class="paragraph">
+<p><strong>useOpenapiMacro</strong></p>
+</div>
+<div class="paragraph">
+<p>If this option is present and equal to <code>confluence-open-api</code> or <code>swagger-open-api</code> then any source block marked with <code>class openapi</code> will be wrapped in the Elitesoft Swagger Editor macro (see <a href="https://marketplace.atlassian.com/apps/1218914/open-api-swagger-editor-for-confluence">Elitesoft Swagger Editor</a>). The key depends on the version of the macro.</p>
+</div>
+<div class="paragraph">
+<p>For backward compatibility, if this option is present and equal to <code>true</code>, then again the Elitesoft Swagger Editor macro will be used.</p>
+</div>
+<div class="paragraph">
+<p>If this option is present and equal to "open-api" then any source block marked with class openapi will be wrapped in Open API Documentation for Confluence macro:  (see <a href="https://marketplace.atlassian.com/apps/1215176/open-api-documentation-for-confluence">Open API Documentation for Confluence</a>). A download source (yaml) button is shown by default.<br>
+Using the plugin can be handled on different ways.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>copy/paste the content of the YAML file to the plugin without linking to the origin source by using the url to the YAML file</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="asciidoc">[source.openapi,yaml]
-----
-include::myopeanapi.yaml[]
-----</code></pre>
+<pre class="prettyprint highlight"><code data-lang="asciidoc">    [source.openapi,yaml]
+    ----
+    \include::https://my-domain.com/path-to-yaml[]
+    ----</code></pre>
 </div>
 </div>
-</dd>
-</dl>
+<div class="ulist">
+<ul>
+<li>
+<p>copy/paste the content of the YAML file to the plugin without linking to the origin source by using a YAML file in your project structure:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="asciidoc">    [source.openapi,yaml]
+    ----
+    \include::my-yaml-file.yaml[]
+    ----</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>create a link between the plugin and the YAML file without copying the content into the plugin. The advantage following this way is that even in case the API specification is changed without re-generating the documentation, the new version of the configuration is used in Confluence.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="asciidoc">    [source.openapi,yaml,role="url:https://my-domain.com/path-to-yaml"]
+    ----
+    \include::https://my-domain.com/path-to-yaml[]
+    ----</code></pre>
+</div>
 </div>
 <div class="listingblock">
 <div class="title">publishToConfluence.gradle</div>
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="groovy">Unresolved directive in &lt;stdin&gt; - include::/home/travis/.doctoolchain/docToolchain-2.0.1/Config.groovy[tags=confluenceConfig]</code></pre>
+<pre class="prettyprint highlight"><code data-lang="groovy">//Configureation for publishToConfluence
+
+confluence = [:]
+
+// 'input' is an array of files to upload to Confluence with the ability
+//          to configure a different parent page for each file.
+//
+// Attributes
+// - 'file': absolute or relative path to the asciidoc generated html file to be exported
+// - 'url': absolute URL to an asciidoc generated html file to be exported
+// - 'ancestorName' (optional): the name of the parent page in Confluence as string;
+//                             this attribute has priority over ancestorId, but if page with given name doesn't exist,
+//                             ancestorId will be used as a fallback
+// - 'ancestorId' (optional): the id of the parent page in Confluence as string; leave this empty
+//                            if a new parent shall be created in the space
+// - 'preambleTitle' (optional): the title of the page containing the preamble (everything
+//                            before the first second level heading). Default is 'arc42'
+//
+// The following four keys can also be used in the global section below
+// - 'spaceKey' (optional): page specific variable for the key of the confluence space to write to
+// - 'createSubpages' (optional): page specific variable to determine whether ".sect2" sections shall be split from the current page into subpages
+// - 'pagePrefix' (optional): page specific variable, the pagePrefix will be a prefix for the page title and it's sub-pages
+//                            use this if you only have access to one confluence space but need to store several
+//                            pages with the same title - a different pagePrefix will make them unique
+// - 'pageSuffix' (optional): same usage as prefix but appended to the title and it's subpages
+// only 'file' or 'url' is allowed. If both are given, 'url' is ignored
+confluence.with {
+    input = [
+            [ file: "build/docs/html5/arc42-template-de.html" ],
+    ]
+
+    // endpoint of the confluenceAPI (REST) to be used
+    // verfiy that you got the correct endpoint by browsing to 
+    // https://[yourServer]/[context]/rest/api/user/current
+    // you should get a valid json which describes your current user
+    // a working example is https://arc42-template.atlassian.net/wiki/rest/api/user/current
+    api = 'https://[yourServer]/[context]/rest/api/'
+
+//    Additionally, spaceKey, createSubpages, pagePrefix and pageSuffix can be globally defined here. The assignment in the input array has precedence
+
+    // the key of the confluence space to write to
+    spaceKey = 'asciidoc'
+
+    // the title of the page containing the preamble (everything the first second level heading). Default is 'arc42'
+    preambleTitle = ''
+
+    // variable to determine whether ".sect2" sections shall be split from the current page into subpages
+    createSubpages = false
+
+    // the pagePrefix will be a prefix for each page title
+    // use this if you only have access to one confluence space but need to store several
+    // pages with the same title - a different pagePrefix will make them unique
+    pagePrefix = ''
+
+    pageSuffix = ''
+
+    /*
+    WARNING: It is strongly recommended to store credentials securely instead of commiting plain text values to your git repository!!!
+
+    Tool expects credentials that belong to an account which has the right permissions to to create and edit confluence pages in the given space.
+    Credentials can be used in a form of:
+     - passed parameters when calling script (-PconfluenceUser=myUsername -PconfluencePass=myPassword) which can be fetched as a secrets on CI/CD or
+     - gradle variables set through gradle properties (uses the 'confluenceUser' and 'confluencePass' keys)
+    Often, same credentials are used for Jira &amp; Confluence, in which case it is recommended to pass CLI parameters for both entities as
+    -Pusername=myUser -Ppassword=myPassword
+    */
+
+    //optional API-token to be added in case the credentials are needed for user and password exchange.
+    //apikey = "[API-token]"
+
+    // HTML Content that will be included with every page published
+    // directly after the TOC. If left empty no additional content will be
+    // added
+    // extraPageContent = '&lt;ac:structured-macro ac:name="warning"&gt;&lt;ac:parameter ac:name="title" /&gt;&lt;ac:rich-text-body&gt;This is a generated page, do not edit!&lt;/ac:rich-text-body&gt;&lt;/ac:structured-macro&gt;
+    extraPageContent = ''
+
+    // enable or disable attachment uploads for local file references
+    enableAttachments = false
+
+    // default attachmentPrefix = attachment - All files to attach will require to be linked inside the document.
+    // attachmentPrefix = "attachment"
+
+
+    // Optional proxy configuration, only used to access Confluence
+    // schema supports http and https
+    // proxy = [host: 'my.proxy.com', port: 1234, schema: 'http']
+
+    // Optional: specify which Confluence OpenAPI Macro should be used to render OpenAPI definitions
+    // possible values: ["confluence-open-api", "open-api", "swagger-open-api", true]. true is the same as "confluence-open-api" for backward compatibility
+    // useOpenapiMacro = "confluence-open-api"
+}</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_css_styling">CSS Styling</h3>
 <div class="paragraph">
-<p>Some AsciiDoctor features depend on particular CSS style definitions.
-Unless these styles are defined, some formatting that is present in the HTML version will not be represented when published to Confluence.</p>
+<p>Some AsciiDoctor features depend on specific CSS style definitions.
+Unless these styles are defined, some formatting that is present in the HTML version will not be represented when published to Confluence.
+To configure Confluence to include additional style definitions:</p>
 </div>
 <div class="olist arabic">
-<div class="title">To configure Confluence to include additional style definitions:</div>
 <ol class="arabic">
 <li>
-<p>Log in to Confluence as a space admin</p>
+<p>Log in to Confluence as a space admin.</p>
 </li>
 <li>
-<p>Go to the desired space</p>
+<p>Go to the desired space.</p>
 </li>
 <li>
-<p>Select "Space tools", "Look and Feel", "Stylesheet"</p>
+<p>Select <strong>Space tools &gt; Look and Feel &gt; Stylesheet</strong>.</p>
 </li>
 <li>
-<p>Click "Edit", enter the desired style definitions, and click "Save"</p>
+<p>Click <strong>Edit</strong> then enter the desired style definitions.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>The default style definitions can be found in the AsciiDoc project as <a href="https://raw.githubusercontent.com/asciidoctor/asciidoctor/master/data/stylesheets/asciidoctor-default.css">asciidoctor-default.css</a>.
-Note that you likely do <strong>NOT</strong> want to include the whole thing, as some of the definitions are likely to disrupt Confluence&#8217;s layout.</p>
+You will most likely <strong>NOT</strong> want to include the entire thing, as some of the definitions are likely to disrupt Confluence&#8217;s layout.</p>
 </div>
 <div class="paragraph">
-<p>The following style definitions are believed to be Confluence-compatible, and enable use of the built-in roles (<code>big</code>/<code>small</code>, <code>underline</code>/<code>overline</code>/<code>line-through</code>, <code><em>COLOR</em></code>/<code><em>COLOR</em>-background</code> for the <a href="https://en.wikipedia.org/wiki/Web_colors#HTML_color_names">sixteen HTML color names</a>):</p>
+<p>The following style definitions are Confluence-compatible, and will enable the use of the built-in roles (<code>big</code>/<code>small</code>, <code>underline</code>/<code>overline</code>/<code>line-through</code>, <code><em>COLOR</em></code>/<code><em>COLOR</em>-background</code> for the <a href="https://en.wikipedia.org/wiki/Web_colors#HTML_color_names">sixteen HTML color names</a>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -800,6 +991,7 @@ import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.EncoderRegistry
 import groovyx.net.http.ContentType
 import java.security.MessageDigest
+import static groovy.io.FileType.FILES
 //to upload attachments:
 import org.apache.http.entity.mime.MultipartEntity
 import org.apache.http.entity.mime.content.StringBody
@@ -882,11 +1074,7 @@ def addLabels = { def pageId, def labelsArray -&gt;
     def api = new RESTClient(config.confluence.api)
     //this fixes the encoding (dierk42: Is this needed here? Don't know)
     api.encoderRegistry = new EncoderRegistry( charset: 'utf-8' )
-
-    def headers = [
-            'Authorization': 'Basic ' + config.confluence.credentials,
-            'X-Atlassian-Token':'no-check'
-    ]
+    def headers = getHeaders()
     // Attach each label in a API call of its own. The only prefix possible
     // in our own Confluence is 'global'
     labelsArray.each { label -&gt;
@@ -925,16 +1113,7 @@ def uploadAttachment = { def pageId, String url, String fileName, String note -&
     if (config.confluence.proxy) {
         api.setProxy(config.confluence.proxy.host, config.confluence.proxy.port, config.confluence.proxy.schema ?: 'http')
     }
-
-    def headers = [
-            'Authorization': 'Basic ' + config.confluence.credentials,
-            'X-Atlassian-Token':'no-check'
-    ]
-    //Add api key and value to REST API request header if configured - required for authentification.
-    if (config.confluence.apikey)
-    {
-       headers.keyid = config.confluence.apikey
-    }
+   def headers = getHeaders()
     //check if attachment already exists
     def result = "nothing"
     def attachment = api.get(path: 'content/' + pageId + '/child/attachment',
@@ -1173,29 +1352,58 @@ def rewriteCodeblocks = { body -&gt;
 }
 
 def rewriteOpenAPI = { org.jsoup.nodes.Element body -&gt;
-         if (config.confluence.useOpenapiMacro == true || config.confluence.useOpenapiMacro == 'confluence-open-api') {
-            body.select('div.openapi  pre &gt; code').each { code -&gt;
-                def parent=code.parent()
-                def rawYaml=code.wholeText()
-                code.parent()
-                        .wrap('&lt;ac:structured-macro ac:name="confluence-open-api" ac:schema-version="1" ac:macro-id="1dfde21b-6111-4535-928a-470fa8ae3e7d"&gt;&lt;/ac:structured-macro&gt;')
-                        .unwrap()
-                code.wrap("&lt;ac:plain-text-body&gt;${CDATA_PLACEHOLDER_START}${CDATA_PLACEHOLDER_END}&lt;/ac:plain-text-body&gt;")
-                        .replaceWith(new TextNode(rawYaml))
-            }
-         }
-        else if (config.confluence.useOpenapiMacro == 'open-api') {
-            body.select('div.openapi  pre &gt; code').each { code -&gt;
-                def parent=code.parent()
-                def rawYaml=code.wholeText()
-                code.parent()
-                        .wrap('&lt;ac:structured-macro ac:name="open-api" ac:schema-version="1" data-layout="default" ac:macro-id="4302c9d8-fca4-4f14-99a9-9885128870fa"&gt;&lt;/ac:structured-macro&gt;')
-                        .unwrap()
-                // default: show download button
-                code.before('&lt;ac:parameter ac:name="showDownloadButton"&gt;true&lt;/ac:parameter&gt;')
-                code.wrap("&lt;ac:plain-text-body&gt;${CDATA_PLACEHOLDER_START}${CDATA_PLACEHOLDER_END}&lt;/ac:plain-text-body&gt;")
-                        .replaceWith(new TextNode(rawYaml))
-            }
+    if (config.confluence.useOpenapiMacro == true || config.confluence.useOpenapiMacro == 'confluence-open-api') {
+        body.select('div.openapi  pre &gt; code').each { code -&gt;
+            def parent=code.parent()
+            def rawYaml=code.wholeText()
+            code.parent()
+                    .wrap('&lt;ac:structured-macro ac:name="confluence-open-api" ac:schema-version="1" ac:macro-id="1dfde21b-6111-4535-928a-470fa8ae3e7d"&gt;&lt;/ac:structured-macro&gt;')
+                    .unwrap()
+            code.wrap("&lt;ac:plain-text-body&gt;${CDATA_PLACEHOLDER_START}${CDATA_PLACEHOLDER_END}&lt;/ac:plain-text-body&gt;")
+                    .replaceWith(new TextNode(rawYaml))
+        }
+    } else if (config.confluence.useOpenapiMacro == 'swagger-open-api') {
+        body.select('div.openapi  pre &gt; code').each { code -&gt;
+            def parent=code.parent()
+            def rawYaml=code.wholeText()
+            code.parent()
+                    .wrap('&lt;ac:structured-macro ac:name="swagger-open-api" ac:schema-version="1" ac:macro-id="f9deda8a-1375-4488-8ca5-3e10e2e4ee70"&gt;&lt;/ac:structured-macro&gt;')
+                    .unwrap()
+            code.wrap("&lt;ac:plain-text-body&gt;${CDATA_PLACEHOLDER_START}${CDATA_PLACEHOLDER_END}&lt;/ac:plain-text-body&gt;")
+                    .replaceWith(new TextNode(rawYaml))
+        }
+    } else if (config.confluence.useOpenapiMacro == 'open-api') {
+
+              def includeURL=null
+
+              for (Element e : body.select('div .listingblock.openapi')) {
+                  for (String s : e.className().split(" ")) {
+                      if (s.startsWith("url")) {
+                          //include the link to the URL for the macro
+                          includeURL = s.replace('url:', '')
+                     }
+                  }
+              }
+
+              body.select('div.openapi  pre &gt; code').each { code -&gt;
+                  def parent=code.parent()
+                  def rawYaml=code.wholeText()
+
+                  code.parent()
+                      .wrap('&lt;ac:structured-macro ac:name="open-api" ac:schema-version="1" data-layout="default" ac:macro-id="4302c9d8-fca4-4f14-99a9-9885128870fa"&gt;&lt;/ac:structured-macro&gt;')
+                      .unwrap()
+
+                  if (includeURL!=null)
+                  {
+                      code.before('&lt;ac:parameter ac:name="url"&gt;'+includeURL+'&lt;/ac:parameter&gt;')
+                  }
+                  else {
+                      //default: show download button
+                      code.before('&lt;ac:parameter ac:name="showDownloadButton"&gt;true&lt;/ac:parameter&gt;')
+                      code.wrap("&lt;ac:plain-text-body&gt;${CDATA_PLACEHOLDER_START}${CDATA_PLACEHOLDER_END}&lt;/ac:plain-text-body&gt;")
+                          .replaceWith(new TextNode(rawYaml))
+                  }
+              }
     }
 }
 
@@ -1332,15 +1540,7 @@ def parseBody =  { body, anchors, pageAnchors -&gt;
 // #342-dierk42: added parameter 'keywords'
 def pushToConfluence = { pageTitle, pageBody, String parentId, anchors, pageAnchors, keywords -&gt;
     def api = new RESTClient(config.confluence.api)
-    def headers = [
-            'Authorization': 'Basic ' + config.confluence.credentials,
-            'Content-Type':'application/json; charset=utf-8'
-    ]
-    //Add api key and value to REST API request header if configured - required for authentification.
-    if (config.confluence.apikey)
-    {
-       headers.keyid = config.confluence.apikey
-    }
+    def headers = getHeaders()
     String realTitleLC = realTitle(pageTitle).toLowerCase()
 
     //this fixes the encoding
@@ -1513,11 +1713,9 @@ def promoteHeaders = { tree, start, offset -&gt;
 }
 
 def retrievePageIdByName = { String name -&gt;
-        def api = new RESTClient(config.confluence.api)
-        def headers = [
-            'Authorization': 'Basic ' + config.confluence.credentials,
-            'Content-Type':'application/json; charset=utf-8'
-        ]
+    def api = new RESTClient(config.confluence.api)
+    def headers = getHeaders()
+
         trythis {
             def request = [
                 'title'    : name,
@@ -1533,116 +1731,152 @@ def retrievePageIdByName = { String name -&gt;
         } ?: null
 }
 
-config.confluence.input.each { input -&gt;
-
-    input.file = "${docDir}/${input.file}"
-
-    println "publish ${input.file}"
-
-    if (input.file ==~ /.*[.](ad|adoc|asciidoc)$/) {
-        println "convert ${input.file}"
-        "groovy asciidoc2html.groovy ${input.file}".execute()
-        input.file = input.file.replaceAll(/[.](ad|adoc|asciidoc)$/, '.html')
-        println "to ${input.file}"
-    }
-//  assignend, but never used in pushToConfluence(...) (fixed here)
-    confluenceSpaceKey = input.spaceKey ?: config.confluence.spaceKey
-    confluenceCreateSubpages = (input.createSubpages != null) ? input.createSubpages : config.confluence.createSubpages
-//  hard to read in case of using :sectnums: -&gt; so we add a suffix
-    confluencePagePrefix = input.pagePrefix ?: config.confluence.pagePrefix
-//  added
-    confluencePageSuffix = input.pageSuffix ?: config.confluence.pageSuffix
-    confluencePreambleTitle = input.preambleTitle ?: config.confluence.preambleTitle
-
-    def html = input.file ? new File(input.file).getText('utf-8') : new URL(input.url).getText()
-    baseUrl = input.file ? new File(input.file) : new URL(input.url)
-    Document dom = Jsoup.parse(html, 'utf-8', Parser.xmlParser())
-    dom.outputSettings().prettyPrint(false);//makes html() preserve linebreaks and spacing
-    dom.outputSettings().escapeMode(org.jsoup.nodes.Entities.EscapeMode.xhtml); //This will ensure xhtml validity regarding entities
-    dom.outputSettings().charset("UTF-8"); //does no harm :-)
-
-    // if ancestorName is defined try to find machingAncestorId in confluence
-    def retrievedAncestorId
-    if (input.ancestorName) {
-        // Retrieve a page id by name
-        retrievedAncestorId = retrievePageIdByName(input.ancestorName)
-        println("Retrieved pageId for given ancestorName '${input.ancestorName}' is ${retrievedAncestorId}")
-    }
-
-    // if input does not contain an ancestorName, check if there is ancestorId, otherwise check if there is a global one
-    def parentId = retrievedAncestorId ?: input.ancestorId ?: config.confluence.ancestorId
-
-    // if parentId is still not set, create a new parent page (parentId = null)
-    parentId = parentId ?: null
-    //println("ancestorName: '${input.ancestorName}', ancestorId: ${input.ancestorId} ---&gt; final parentId: ${parentId}")
-
-    def anchors = [:]
-    def pageAnchors = [:]
-    def sections = pages = []
-    // #342-dierk42: get the keywords from the meta tags
-    def keywords = []
-    dom.select('meta[name=keywords]').each { kw -&gt;
-        kws = kw.attr('content').split(',')
-        kws.each { skw -&gt;
-            keywords &lt;&lt; skw.trim()
-        }
-        println "Keywords:" + keywords
-    }
-    // let's try to select the "first page" and push it to confluence
-    dom.select('div#preamble div.sectionbody').each { pageBody -&gt;
-        pageBody.select('div.sect2').unwrap()
-        def preamble = [
-            title: confluencePreambleTitle ?: "arc42",
-            body: pageBody,
-            children: [],
-            parent: parentId
-        ]
-        pages &lt;&lt; preamble
-        sections = preamble.children
-        parentId = null
-        anchors.putAll(parseAnchors(preamble))
-    }
-    // &lt;div class="sect1"&gt; are the main headings
-    // let's extract these
-    dom.select('div.sect1').each { sect1 -&gt;
-        Elements pageBody = sect1.select('div.sectionbody')
-        def currentPage = [
-            title: sect1.select('h2').text(),
-            body: pageBody,
-            children: [],
-            parent: parentId
-        ]
-        pageAnchors.putAll(recordPageAnchor(sect1.select('h2')))
-
-        if (confluenceCreateSubpages) {
-            pageBody.select('div.sect2').each { sect2 -&gt;
-                def title = sect2.select('h3').text()
-                pageAnchors.putAll(recordPageAnchor(sect2.select('h3')))
-                sect2.select('h3').remove()
-                def body = Jsoup.parse(sect2.toString(),'utf-8', Parser.xmlParser())
-                body.outputSettings(new Document.OutputSettings().prettyPrint(false))
-                def subPage = [
-                    title: title,
-                    body: body
-                ]
-                currentPage.children &lt;&lt; subPage
-                promoteHeaders sect2, 4, 3
-                anchors.putAll(parseAnchors(subPage))
-            }
-            pageBody.select('div.sect2').remove()
-        } else {
-            pageBody.select('div.sect2').unwrap()
-            promoteHeaders sect1, 3, 2
-        }
-        sections &lt;&lt; currentPage
-        anchors.putAll(parseAnchors(currentPage))
-    }
-
-    pushPages pages, anchors, pageAnchors, keywords
-    if (parentId) {
-        println "published to ${config.confluence.api - "rest/api/"}spaces/${confluenceSpaceKey}/pages/${parentId}"
+def getHeaders(){
+    println 'Start getting headers'
+    def headers
+    if(config.confluence.bearerToken){
+        headers = [
+                'Authorization': 'Bearer ' + config.confluence.bearerToken,
+                'X-Atlassian-Token':'no-check'            
+        ]         
+         println 'Start using bearer auth'     
     } else {
-        println "published to ${config.confluence.api - "rest/api/"}spaces/${confluenceSpaceKey}"
+        headers = [
+                'Authorization': 'Basic ' + config.confluence.credentials,
+                'X-Atlassian-Token':'no-check'
+        ]     
+        //Add api key and value to REST API request header if configured - required for authentification.
+        if (config.confluence.apikey){
+            headers.keyid = config.confluence.apikey
+        }
+    }
+    return headers
+}
+
+if(config.confluence.inputHtmlFolder) {
+    htmlFolder = "${docDir}/${config.confluence.inputHtmlFolder}"
+    println "Starting processing files in folder: " + config.confluence.inputHtmlFolder
+    def dir = new File(htmlFolder)
+    
+    dir.eachFileRecurse (FILES) { fileName -&gt;
+        if (fileName.isFile()){
+            def map = [file: config.confluence.inputHtmlFolder+fileName.getName()]
+            config.confluence.input.add(map)
+         }
+    }
+}
+
+config.confluence.input.each { input -&gt;
+    if(input.file) {
+        input.file = "${docDir}/${input.file}"
+
+        println "publish ${input.file}"
+
+        if (input.file ==~ /.*[.](ad|adoc|asciidoc)$/) {
+            println "HINT:"
+            println "please first convert ${input.file} to html by executing generateHTML"
+            println "the generated file will be found in build/html5/. and has to be referenced instead of the .adoc file"
+            throw new RuntimeException("config problem")
+        }
+    //  assignend, but never used in pushToConfluence(...) (fixed here)
+        confluenceSpaceKey = input.spaceKey ?: config.confluence.spaceKey
+        confluenceCreateSubpages = (input.createSubpages != null) ? input.createSubpages : config.confluence.createSubpages
+    //  hard to read in case of using :sectnums: -&gt; so we add a suffix
+        confluencePagePrefix = input.pagePrefix ?: config.confluence.pagePrefix
+    //  added
+        confluencePageSuffix = input.pageSuffix ?: config.confluence.pageSuffix
+        confluencePreambleTitle = input.preambleTitle ?: config.confluence.preambleTitle
+
+        def html = input.file ? new File(input.file).getText('utf-8') : new URL(input.url).getText()
+        baseUrl = input.file ? new File(input.file) : new URL(input.url)
+        Document dom = Jsoup.parse(html, 'utf-8', Parser.xmlParser())
+        dom.outputSettings().prettyPrint(false);//makes html() preserve linebreaks and spacing
+        dom.outputSettings().escapeMode(org.jsoup.nodes.Entities.EscapeMode.xhtml); //This will ensure xhtml validity regarding entities
+        dom.outputSettings().charset("UTF-8"); //does no harm :-)
+
+        // if ancestorName is defined try to find machingAncestorId in confluence
+        def retrievedAncestorId
+        if (input.ancestorName) {
+            // Retrieve a page id by name
+            retrievedAncestorId = retrievePageIdByName(input.ancestorName)
+            println("Retrieved pageId for given ancestorName '${input.ancestorName}' is ${retrievedAncestorId}")
+        }
+
+        // if input does not contain an ancestorName, check if there is ancestorId, otherwise check if there is a global one
+        def parentId = retrievedAncestorId ?: input.ancestorId ?: config.confluence.ancestorId
+
+        // if parentId is still not set, create a new parent page (parentId = null)
+        parentId = parentId ?: null
+        //println("ancestorName: '${input.ancestorName}', ancestorId: ${input.ancestorId} ---&gt; final parentId: ${parentId}")
+
+        def anchors = [:]
+        def pageAnchors = [:]
+        def sections = pages = []
+        // #342-dierk42: get the keywords from the meta tags
+        def keywords = []
+        dom.select('meta[name=keywords]').each { kw -&gt;
+            kws = kw.attr('content').split(',')
+            kws.each { skw -&gt;
+                keywords &lt;&lt; skw.trim()
+            }
+            println "Keywords:" + keywords
+        }
+        // let's try to select the "first page" and push it to confluence
+        dom.select('div#preamble div.sectionbody').each { pageBody -&gt;
+            pageBody.select('div.sect2').unwrap()
+            def preamble = [
+                title: confluencePreambleTitle ?: "arc42",
+                body: pageBody,
+                children: [],
+                parent: parentId
+            ]
+            pages &lt;&lt; preamble
+            sections = preamble.children
+            parentId = null
+            anchors.putAll(parseAnchors(preamble))
+        }
+        // &lt;div class="sect1"&gt; are the main headings
+        // let's extract these
+        dom.select('div.sect1').each { sect1 -&gt;
+            Elements pageBody = sect1.select('div.sectionbody')
+            def currentPage = [
+                title: sect1.select('h2').text(),
+                body: pageBody,
+                children: [],
+                parent: parentId
+            ]
+            pageAnchors.putAll(recordPageAnchor(sect1.select('h2')))
+
+            if (confluenceCreateSubpages) {
+                pageBody.select('div.sect2').each { sect2 -&gt;
+                    def title = sect2.select('h3').text()
+                    pageAnchors.putAll(recordPageAnchor(sect2.select('h3')))
+                    sect2.select('h3').remove()
+                    def body = Jsoup.parse(sect2.toString(),'utf-8', Parser.xmlParser())
+                    body.outputSettings(new Document.OutputSettings().prettyPrint(false))
+                    def subPage = [
+                        title: title,
+                        body: body
+                    ]
+                    currentPage.children &lt;&lt; subPage
+                    promoteHeaders sect2, 4, 3
+                    anchors.putAll(parseAnchors(subPage))
+                }
+                pageBody.select('div.sect2').remove()
+            } else {
+                pageBody.select('div.sect2').unwrap()
+                promoteHeaders sect1, 3, 2
+            }
+            sections &lt;&lt; currentPage
+            anchors.putAll(parseAnchors(currentPage))
+        }
+
+        pushPages pages, anchors, pageAnchors, keywords
+        if (parentId) {
+            println "published to ${config.confluence.api - "rest/api/"}spaces/${confluenceSpaceKey}/pages/${parentId}"
+        } else {
+            println "published to ${config.confluence.api - "rest/api/"}spaces/${confluenceSpaceKey}"
+        }
     }
 }
 ""</code></pre>
@@ -1678,11 +1912,11 @@ config.confluence.input.each { input -&gt;
     <button class="feedback--answer feedback--answer-yes">Yes</button>
     <button class="feedback--answer feedback--answer-no">No</button>
     <p class="feedback--response feedback--response-yes">
-        Glad to hear it! Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27%20👍&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:015_tasks/03_task_publishToConfluence.adoc">tell us
+        Glad to hear it! Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27%20%F0%9F%91%8D&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:015_tasks/03_task_publishToConfluence.adoc">tell us
     how we can improve</a>.
     </p>
     <p class="feedback--response feedback--response-no">
-        Sorry to hear that. Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27%20👎&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:015_tasks/03_task_publishToConfluence.adoc">tell
+        Sorry to hear that. Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27%20%F0%9F%91%8E&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:015_tasks/03_task_publishToConfluence.adoc">tell
     us how we can improve</a>.
     </p>
 </div>
@@ -1752,7 +1986,7 @@ config.confluence.input.each { input -&gt;
                         
                         <li aria-label="User mailing list" class="list-inline-item mx-2 h3" data-original-title="User mailing list" data-placement="top"
                             data-toggle="tooltip" title="">
-                            <a class="text-white" href="info@docs-as-co.de" rel="noopener noreferrer"
+                            <a class="text-white" href="mailto:info@docs-as-co.de" rel="noopener noreferrer"
                                target="_blank">
                                 <i class="fa fa-envelope"></i>
                             </a>
@@ -1804,7 +2038,7 @@ config.confluence.input.each { input -&gt;
                 </div>
                 <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
 
-                        <small class="text-white">build with <a href="https://doctoolchain.org">docToolchain</a> and <a href="https://jbake.org">jBake</a> <br /> theme: <a href="https://www.docsy.dev/">docsy</a></small>
+                        <small class="text-white">built with <a href="https://doctoolchain.org">docToolchain</a> and <a href="https://jbake.org">jBake</a> <br /> theme: <a href="https://www.docsy.dev/">docsy</a></small>
 
                 </div>
             </div>
