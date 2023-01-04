@@ -2,14 +2,14 @@
 <html lang="de">
 <head>
   
-  <!-- 020_tutorial/010_Install.html -->
+  <!-- 020_tutorial/070_publishToConfluence.html -->
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <meta content="jbake" name="generator">
   <meta content="INDEX, FOLLOW" name="ROBOTS">
 
-  <title>Install docToolchain</title>
+  <title>publishToConfluence</title>
   <meta content="docToolchain" property="og:title">
   <meta content="build your dev docs the easy way..." property="og:description">
   <meta content="website" property="og:type">
@@ -216,7 +216,7 @@
                         
                         <ul class="td-sidebar-nav__section pr-md-3 ul-0">
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
-                                <a class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section active"
+                                <a class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section "
                                    href="../020_tutorial/010_Install.html">Install docToolchain</a>
                             </li>
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
@@ -236,7 +236,7 @@
                                    href="../020_tutorial/050_multipleRepositories.html">Multi-Repo</a>
                             </li>
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
-                                <a class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section "
+                                <a class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section active"
                                    href="../020_tutorial/070_publishToConfluence.html">publishToConfluence</a>
                             </li>
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
@@ -262,11 +262,11 @@
 				<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
 					
 
-        <a href="https://github.com/doctoolchain/doctoolchain/edit/ng/src/docs/020_tutorial/010_Install.adoc"
+        <a href="https://github.com/doctoolchain/doctoolchain/edit/ng/src/docs/020_tutorial/070_publishToConfluence.adoc"
            target="_blank"><i class="fa fa-edit fa-fw"></i> Improve this doc</a>
 
 
-        <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27Install+docToolchain%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/doctoolchain/doctoolchain/edit/ng/src/docs/020_tutorial/010_Install.adoc%0A%23branch: ng" target="_blank"><i
+        <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/doctoolchain/doctoolchain/edit/ng/src/docs/020_tutorial/070_publishToConfluence.adoc%0A%23branch: ng" target="_blank"><i
                 class="fab fa-github fa-fw"></i> Create an issue</a>
 
         
@@ -275,12 +275,10 @@
         <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_welcome">Welcome!</a></li>
-<li><a href="#_installing_doctoolchain">Installing docToolchain</a>
+<li><a href="#_publish_your_docs_to_confluence">Publish Your Docs to Confluence</a>
 <ul class="sectlevel2">
-<li><a href="#_getting_the_wrapper">Getting the Wrapper</a></li>
-<li><a href="#_configure_the_wrapper">Configure the Wrapper</a></li>
-<li><a href="#first-command">Running your First Command</a></li>
+<li><a href="#_step_1_set_up_doctoolchain">Step 1: Set Up docToolchain</a></li>
+<li><a href="#_step_2_configure_confluence_access">Step 2: Configure Confluence Access</a></li>
 </ul>
 </li>
 </ul>
@@ -304,131 +302,369 @@
     <div class="td-content">
         <p>
             
+<style>
+div.center { text-align: center;}
+img { box-shadow: 5px 5px 5px grey;}
+</style>
 <div class="sect1">
-<h2 id="_welcome">Welcome!</h2>
+<h2 id="_publish_your_docs_to_confluence">Publish Your Docs to Confluence</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nice to meet you.
-Glad that you want to learn more about using docToolchain.
-Start by installing what you need.</p>
+<p>There are times when you&#8217;ll want to publish your docs to Confluence, such as when you work in a team where not everyone wants to work with Git.
+docToolchain lets you publish your Git-based docs to Confluence alongside manually edited Confluence pages.</p>
 </div>
 <div class="paragraph">
-<p>The following steps are the same as described in the User Docs.
-Please follow them step by step.
-You are prompted to install everything you need for each step.</p>
+<p>Another situation is when you want to work with the arc42 template in Confluence.
+There are several ways to import the template, but most of them require admin access.
+To get around this, you can set up a fresh copy of the arc42 template in docToolchain and publish it to your Confluence instance.</p>
 </div>
 <div class="paragraph">
-<p>If you encounter problems, create a GitHub issue and the community will help you.</p>
+<p>In this tutorial, you&#8217;ll learn how to publish the arc42 template to a Confluence cloud instance.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For this tutorial, we will assume that you work with a Linux-based system.
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_installing_doctoolchain">Installing docToolchain</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1_set_up_doctoolchain">Step 1: Set Up docToolchain</h3>
 <div class="paragraph">
-<p><span class="image gravatar"><img src="https://www.gravatar.com/avatar/cc5f3bf8b3cb91c985ed4fd046aa451d?d=identicon" alt="Ralf D. Müller" width="32" height="32" title="Ralf D. Müller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/4f103261b35ad85b347310ca448fb351?d=identicon" alt="Nicca3006" width="32" height="32" title="Nicca3006"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/c9b0a22075cd70224fd219e3257a8ce0?d=identicon" alt="Jeremie Bresson" width="32" height="32" title="Jeremie Bresson"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/af2ddd81694aba35cd520f469ab0c42?d=identicon" alt="Bennykillua" width="32" height="32" title="Bennykillua"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/7c4c4a3d249b712651df3a1d1c28ab97?d=identicon" alt="Jérémie Bresson" width="32" height="32" title="Jérémie Bresson"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/e97f08ba2eb556167306cbd06ca82ffc?d=identicon" alt="T8xi" width="32" height="32" title="T8xi"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/c2ebd5942c5c72df68458314fc750b9f?d=identicon" alt="Michael Krauße" width="32" height="32" title="Michael Krauße"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/eedf6f2d4b31cc4e49a7aa4fc55f51d3?d=identicon" alt="Ralf D. Müller" width="32" height="32" title="Ralf D. Müller"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/5107bc93f3e4d103ca06f4e68a64b38?d=identicon" alt="stehlih" width="32" height="32" title="stehlih"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/34ef1437fd31ff96c31dff58125e93fe?d=identicon" alt="Dr. Stefan Pfeiffer" width="32" height="32" title="Dr. Stefan Pfeiffer"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/5f528a3f6814d28b583f31842e3e8d9e?d=identicon" alt="Alexander Schwartz" width="32" height="32" title="Alexander Schwartz"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/f1d121d3bcc84d897239a0b41224df68?d=identicon" alt="feinstaub" width="32" height="32" title="feinstaub"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/d2c684ec9e55edec506308356b67016?d=identicon" alt="Jakub J Jablonski" width="32" height="32" title="Jakub J Jablonski"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/2e3af23bd872d2b971788a4519e3bf46?d=identicon" alt="jakubjab" width="32" height="32" title="jakubjab"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/399cd7a37bd45f40c31dae5bb9f6cafe?d=identicon" alt="Jorge" width="32" height="32" title="Jorge"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/df21e0a05d621d59a147b9091a56ebdc?d=identicon" alt="Dr. Gernot Starke" width="32" height="32" title="Dr. Gernot Starke"></span> <span class="image gravatar"><img src="https://www.gravatar.com/avatar/69124393772349d32fb9fe975545757d?d=identicon" alt="Lars Francke" width="32" height="32" title="Lars Francke"></span></p>
+<p>To set up docToolchain, follow these two tutorials: <a href="http://doctoolchain.org/docToolchain/v2.0.x/020_tutorial/010_Install.html">install docToolchain</a> and <a href="http://doctoolchain.org/docToolchain/v2.0.x/020_tutorial/020_arc42.html">get the arc42 template</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>&#160;&#160;&#160;mkdir publishToConfluenceDemo</code><br>
+<code>&#160;&#160;&#160;cd publishToConfluenceDemo</code></p>
+</div>
+<details>
+<summary class="title"><code>curl -Lo dtcw doctoolchain.github.io/dtcw</code></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>gitpod /workspace/publishToConfluenceDemo (main) $ curl -Lo dtcw doctoolchain.github.io/dtcw
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+Dload  Upload   Total   Spent    Left  Speed
+100   162  100   162    0     0   1306      0 --:--:-- --:--:-- --:--:--  1317
+100 10724  100 10724    0     0  25903      0 --:--:-- --:--:-- --:--:-- 25903</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><code>&#160;&#160;&#160;chmod +x dtcw</code><br></p>
+</div>
+<details>
+<summary class="title"><code>./dtcw getJava</code></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>./dtcw: line 28: !false: command not found
+dtcw - docToolchain wrapper V0.31
+docToolchain V2.0.5
+docker available
+this script assumes that you have linux as operating system (x64 / linux)
+it now tries to install Java for you
+downloading JDK Temurin 11 from adoptiom to /home/gitpod/.doctoolchain/jdk.tar.gz
+WARNING: combining -O with -r or -p will mean that all downloaded content
+will be placed in the single file you specified.
+
+--2022-08-25 20:07:11--  https://api.adoptium.net/v3/binary/latest/11/ga/linux/x64/jdk/hotspot/normal/eclipse?project=jdk
+Resolving api.adoptium.net (api.adoptium.net)... 20.62.244.126
+Connecting to api.adoptium.net (api.adoptium.net)|20.62.244.126|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.16.1%2B1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz [following]
+--2022-08-25 20:07:12--  https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.16.1%2B1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz
+Resolving github.com (github.com)... 140.82.121.3
+Connecting to github.com (github.com)|140.82.121.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/372924883/70b80b22-3dc5-4824-bb2d-d0158a3b9b57?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220825%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220825T200712Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=887a715fcbd2e2d6bf24496f57b168ba2204f0f81794a66615ab53a7b153ed37&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=372924883&amp;response-content-disposition=attachment%3B%20filename%3DOpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz&amp;response-content-type=application%2Foctet-stream [following]
+--2022-08-25 20:07:12--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/372924883/70b80b22-3dc5-4824-bb2d-d0158a3b9b57?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220825%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220825T200712Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=887a715fcbd2e2d6bf24496f57b168ba2204f0f81794a66615ab53a7b153ed37&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=372924883&amp;response-content-disposition=attachment%3B%20filename%3DOpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz&amp;response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 193754645 (185M) [application/octet-stream]
+Saving to: ‘/home/gitpod/.doctoolchain/jdk/jdk.tar.gz’
+
+/home/gitpod/.doctoolchain/jdk 100%[====================================================&gt;] 184.78M   310MB/s    in 0.6s
+
+2022-08-25 20:07:13 (310 MB/s) - ‘/home/gitpod/.doctoolchain/jdk/jdk.tar.gz’ saved [193754645/193754645]
+
+FINISHED --2022-08-25 20:07:13--
+Total wall clock time: 1.7s
+Downloaded: 1 files, 185M in 0.6s (310 MB/s)
+expanding JDK</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>Now comes the part where you have to answer some questions, and lots of <code>.jar</code> files get downloaded.</p>
+</div>
+<details>
+<summary class="title"><code>./dtcw tasks</code></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>dtcw - docToolchain wrapper V0.31
+docToolchain V2.0.5
+local java JDK found
+use /home/gitpod/.doctoolchain/jdk as JDK
+
+docker available
+force use of local install
+docToolchain not installed.
+sdkman not found
+Do you wish to install doctoolchain to /home/gitpod/.doctoolchain?
+1) Yes
+2) No
+#? 1
+installing doctoolchain
+mkdir: cannot create directory ‘/home/gitpod/.doctoolchain’: File exists
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1783k  100 1783k    0     0  2857k      0 --:--:-- --:--:-- --:--:-- 2857k
+Archive:  /home/gitpod/.doctoolchain/source.zip
+   creating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/
+   creating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/bin/
+  inflating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/bin/autobuildSite.bash
+  inflating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/bin/doctoolchain
+
+[152 lines omitted]
+
+  inflating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/template_config/pdfTheme/custom-theme.yml
+   creating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/resources/
+   creating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/resources/asciidoctor-reveal.js/
+   creating: /home/gitpod/.doctoolchain/./docToolchain-2.0.5/resources/reveal.js/
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3489m
+Downloading https://services.gradle.org/distributions/gradle-6.9.2-bin.zip
+..........10%..........20%..........30%...........40%..........50%..........60%..........70%...........80%..........90%..........100%
+
+Welcome to Gradle 6.9.2!
+
+Here are the highlights of this release:
+ - This is a small backport release.
+ - Java 16 can be used to compile when used with Java toolchains
+ - Dynamic versions can be used within plugin declarations
+ - Native support for Apple Silicon processors
+
+For more details see https://docs.gradle.org/6.9.2/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/6.9.2/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build
+
+&gt; Configure project :
+
+Config file '/workspace/publishToConfluenceDemo/docToolchainConfig.groovy' does not exist'
+[ant:input]
+[ant:input] do you want me to create a default one for you? (y, n)
+&lt;&lt;-------------&gt; 0% CONFIGURING [2m 55s]
+
+&gt; Task :help
+
+Welcome to Gradle 6.9.2.
+
+To run a build, run gradlew &lt;task&gt; ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see a list of command-line options, run gradlew --help
+
+To see more detail about a task, run gradlew help --task &lt;task&gt;
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 3m 29s
+1 actionable task: 1 executed</code></pre>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary class="title"><code>./dtcw downloadTemplate</code></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>dtcw - docToolchain wrapper V0.31
+docToolchain V2.0.5
+local java JDK found
+use /home/gitpod/.doctoolchain/jdk as JDK
+
+docker available
+home folder exists
+use local homefolder install /home/gitpod/.doctoolchain/
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3489m
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/6.9.2/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build
+
+&gt; Task :downloadTemplate
+Install arc42 documentation template.
+For more information about arc42 see https://arc42.org
+[ant:input] Which language do you want to install? (EN, DE, ES, RU)
+&lt;-&lt;-------------&gt; 0% EXECUTING [11s]
+[ant:input] Do you want the template with or without help? (withhelp, plain)
+&lt;-&lt;&lt;-&lt;--&lt;-------------&gt; 0% EXECUTING [17s]
+Download https://github.com/arc42/arc42-template/raw/master/dist/arc42-template-EN-withhelp-asciidoc.zip
+arc42 template unpacked into /workspace/publishToConfluenceDemo/src/docs/arc42
+added template to docToolchainConfig.groovy
+use 'generateHTML', 'generatePDF' or  'generateSite' to convert the template
+
+BUILD SUCCESSFUL in 22s
+1 actionable task: 1 executed</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>You should have now the following folder structure in place:</p>
+</div>
+<details>
+<summary class="title"><code>tree</code></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>.
+├── docToolchainConfig.groovy
+├── dtcw
+└── src
+└── docs
+├── arc42
+│   ├── arc42.adoc
+│   └── chapters
+│       ├── 01_introduction_and_goals.adoc
+│       ├── 02_architecture_constraints.adoc
+│       ├── 03_system_scope_and_context.adoc
+│       ├── 04_solution_strategy.adoc
+│       ├── 05_building_block_view.adoc
+│       ├── 06_runtime_view.adoc
+│       ├── 07_deployment_view.adoc
+│       ├── 08_concepts.adoc
+│       ├── 09_architecture_decisions.adoc
+│       ├── 10_quality_requirements.adoc
+│       ├── 11_technical_risks.adoc
+│       ├── 12_glossary.adoc
+│       ├── about-arc42.adoc
+│       └── config.adoc
+└── images
+├── 01_2_iso-25010-topics-EN.png
+├── 05_building_blocks-EN.png
+├── 08-Crosscutting-Concepts-Structure-EN.png
+└── arc42-logo.png
+
+5 directories, 21 files</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_step_2_configure_confluence_access">Step 2: Configure Confluence Access</h3>
+<div class="paragraph">
+<p>Now I will show you how to configure access to the Confluence API.</p>
+</div>
+<div class="paragraph">
+<p>As an example, I&#8217;ll use the file <code>docToolchainConfig.groovy</code> and search for <code>confluence.with</code>.
+This is the start of the Confluence configuration section.</p>
+</div>
+<div class="paragraph">
+<p>As you can see, there is already an example configured as input for the <code>publishToConfluence</code>-Task.
+But since it&#8217;s only an example, I have to configure it to point to the file generated by <code>./dtcw generateHTML</code>.
+Here is the correct config:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">input = [
+    [ file: "build/html5/arc42/arc42.html" ],
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, I&#8217;ll set up the API endpoint:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="groovy">api = 'https://[yourServer]/[context]/rest/api/'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In my case, I want to publish to <a href="https://arc42-template.atlassian.net" class="bare">https://arc42-template.atlassian.net</a>.
+My first guess is that the correct endpoint is <code><a href="https://arc42-template.atlassian.net/wiki/rest/api/" class="bare">https://arc42-template.atlassian.net/wiki/rest/api/</a></code> and I can verify this by appending <code>user/current</code> to this URL.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://arc42-template.atlassian.net/wiki/rest/api/user/current" class="bare">https://arc42-template.atlassian.net/wiki/rest/api/user/current</a></p>
+</div>
+<div class="paragraph">
+<p>This results in the following output, and proves that I got the right endpoint (no 404).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="json">{
+  "type":"anonymous",
+  "profilePicture":{
+    "path":"/wiki/s/-93606273/6452/1a34f7853d41f548e0ef8f60a80cc50468126739/_/images/icons/profilepics/anonymous.png",
+    "width":48,
+    "height":48,
+    "isDefault":true
+  },
+  "displayName":"Anonymous",
+  "isExternalCollaborator":false,
+  "_expandable":{"operations":""},
+  "_links":{
+    "base":"https://arc42-template.atlassian.net/wiki",
+    "context":"/wiki"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, this API endpoint works as a GET request without being logged in!</p>
+</div>
+<div class="paragraph">
+<p>I created a space called <code>arc42 V8 flat English</code> with the space-key <code>8FE</code>.
+So I configure it accordingly:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>7 minutes to read</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_getting_the_wrapper">Getting the Wrapper</h3>
-<div class="paragraph">
-<p>Basically all you need to work with docToolchain is a simple wrapper script taking care of everything.
-(If you already worked with an older version of docToolchain please note that the way it is installed has changed since the v2.x release.)</p>
-</div>
-<div class="sect3">
-<h4 id="_this_wrapper_helps_by">This wrapper helps by:</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Ensuring that everyone using your repository uses the same docToolchain version.</p>
-</li>
-<li>
-<p>Keeping all docToolchain technology out of your repository.</p>
-</li>
-<li>
-<p>Wrapping your commands and directing them to your local installation.</p>
-</li>
-<li>
-<p>Checking your docToolchain installation (if not installed, the wrapper will do it for you via direct download or Docker).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>This guide explains how to set up docToolchain in the following environments:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A Linux/WSL2 with bash</p>
-</li>
-<li>
-<p>Windows with PowerShell</p>
-</li>
-<li>
-<p>Windows with cmd.exe</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Please select the appropriate setup and follow these instructions to install docToolchain step by step.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you are going to use docToolchain in different projects install the dtcw (docToolchainWrapper) for each one.
-docToolchain itself will only be installed once in your home folder.
-</td>
-</tr>
-</table>
-</div>
-<div class="openblock primary">
-<div class="title">Linux / WSL2 with bash</div>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="bash">cd &lt;your project&gt;
-curl -Lo dtcw doctoolchain.github.io/dtcw
-chmod +x dtcw</code></pre>
+<pre>// the key of the confluence space to write to
+spaceKey = '8FE'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>if you don&#8217;t have <code>curl</code> installed, you can also use <code>wget</code>:</p>
+<p>Now comes the hardest part.
+The configuration of the credentials.</p>
 </div>
-<div class="listingblock">
+<div class="paragraph">
+<p>Since I use a cloud instance, I can use an access token.
+This has to be generated from my central Atlassian account.</p>
+</div>
+<div class="paragraph">
+<p>Navigate to your <code>Profile</code></p>
+</div>
+<div class="imageblock center">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="bash">cd &lt;your project&gt;
-wget doctoolchain.github.io/dtcw
-chmod +x dtcw</code></pre>
+<img src="images/070-first.png" alt="070 first" width="30%">
 </div>
 </div>
+<div class="paragraph">
+<p><code>Manage your Account</code></p>
 </div>
-</div>
-<div class="openblock secondary">
-<div class="title">Windows with Powershell</div>
+<div class="imageblock center">
 <div class="content">
-<div class="listingblock">
+<img src="images/070-second.png" alt="070 second" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p><code>Security</code> &gt; <code>API token</code> &gt; <code>Create and manage API tokens</code></p>
+</div>
+<div class="imageblock center">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="powershell">cd &lt;your project&gt;
-Invoke-WebRequest doctoolchain.github.io/dtcw.ps1 -Outfile dtcw.ps1</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="openblock secondary">
-<div class="title">Windows with cmd.exe</div>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="cmd">cd &lt;your project&gt;
-curl -Lo dtcw.bat doctoolchain.github.io/dtcw.bat</code></pre>
+<img src="images/070-third.png" alt="070 third" width="80%">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -438,255 +674,97 @@ curl -Lo dtcw.bat doctoolchain.github.io/dtcw.bat</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>dtcw.bat</code> wraps the <code>dtcw.ps1</code> script and executes it in powershell. This might be easier to use if you haven&#8217;t yet configured your powershell as a developer.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-In order to support development for your project on both, Linux and Windows, it makes sense to download all three scripts to your project.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<code>dtcw</code> uses bash as shell and thus tries to find java from within bash. Chances are that when you use <code>dtcw</code> from another shell like zsh, you shell knows about the right java version but your bash doesn&#8217;t. In that case, please switch to bash and make sure that the right java version is known. Afterwards, you can switch back to your shell.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_configure_the_wrapper">Configure the Wrapper</h3>
-<div class="paragraph">
-<p>There is no need to configure the wrapper itself if you have just downloaded it.
-In this case, just skip to <a href="#first-command">Running your First Command</a>.</p>
-</div>
-<div class="paragraph">
-<p>But from time to time you should check github to see if there are <a href="https://github.com/docToolchain/docToolchain/releases">new releases</a> you want to use.</p>
-</div>
-<div class="paragraph">
-<p>In this case, open dtcw in your favourite editor and look for the <code>VERSION</code>-line at the start of the file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="bash"># find official release versions on github:
-# https://github.com/docToolchain/docToolchain/releases
-# set VERSION to "latest" to get the unreleased latest version
-VERSION=2.0.5</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Update it to match the latest release and and everything will be updated with the next run.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-this will not update the wrapper (dtcw) itself.
-If you think you should update the wrapper, please re-install it.
+Here is the <a href="https://id.atlassian.com/manage-profile/security/api-tokens">shortcut</a> to this page.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>There are some situation where you want to test a not-yet-released feature.
-In such a case, you can set the <code>VERSION</code> to <code>latest</code> and <code>dtcw</code> will <code>clone</code> or <code>pull</code> the current default branch of the project.</p>
+<p>Now, click on <strong>Create API token</strong>.
+To keep things simple, I will copy this token to the config.</p>
 </div>
 <div class="paragraph">
-<p>This only works with a local copy, not with a docker install.</p>
+<p>(When you use the API token, you have to use your email as your username and the token as the password.)</p>
 </div>
 <div class="paragraph">
-<p>You can also use <code>latestdev</code> as version.
-In this case, <code>dtcw</code> will try to clone the repository with the ssh-git protocoll.
-This way, you can easily point it to your fork and develop new features for docToolchain.
-You will find the fork in <code>$HOME/.doctoolchain/docToolchain-latest</code>.</p>
+<p>So we don&#8217;t store the credentials in the config file, we pass them with the <code>./dtcw</code> command:</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>latest</code> and <code>latestdev</code> currently only work with the bash version of the wrapper.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="first-command">Running your First Command</h3>
-<div class="paragraph">
-<p>To get started with docToolchain, run <code>tasks</code> as the first command:</p>
-</div>
-<div class="openblock primary">
-<div class="title">Linux / WSL2 with bash</div>
+<details>
+<summary class="title"><code>./dtcw publishToConfluence -PconfluenceUser=&lt;your email&gt; -PconfluencePass=&lt;your api-token&gt;</code></summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code data-lang="bash">./dtcw tasks --group=doctoolchain</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="openblock secondary">
-<div class="title">Windows with Powershell</div>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="powershell">./dtcw.ps1 tasks --group=doctoolchain</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="openblock secondary">
-<div class="title">Windows with cmd.exe</div>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="cmd">dtcw.bat tasks --group=doctoolchain</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This command shows all docToolchain tasks and verifies that docToolchain is installed by doing the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Checking for a configuration file (and create one if none exist). Prefers a local installation.</p>
-</li>
-<li>
-<p>Making use of Docker (if available) where there is no local installation.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If this is your first time installing docToolchain, the images download might take a while.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>if docker is not available, it will download and install docToolchain to your home folder</p>
-<div class="ulist">
-<ul>
-<li>
-<p>it will then run a gradle build through the gradle wrapper. If this is your first time, it will download and install gradle.</p>
-</li>
-<li>
-<p>the gradle build will also fetch some dependencies. This will also take a while if run for the first time..</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-if you are behind a corporate proxy, you might need to consider build-script dependencies are fetched from a repository referenced by the property <code>mavenRepository</code>. By default the value <code><a href="https://plugins.gradle.org/m2/" class="bare">https://plugins.gradle.org/m2/</a></code> is used. When a repository requiring credentials is used the properties <code>mavenUsername</code> and <code>mavenPassword</code> can be set as well.
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="title">Example command passing a custom maven repository with credentials from the command line</div>
-<div class="content">
-<pre class="prettyprint highlight"><code data-lang="sh">./gradlew generateHTML -PmavenRepository=your_maven_repo -PmavenUsername=your_username -PmavenPassword=your_pw --info</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You&#8217;ll notice the installation is an incremental process and will take a while because of all the additional dependencies needed.
-After the first few commands, you&#8217;ll have all the required dependencies installed and things will run faster.</p>
-</div>
-<div class="paragraph">
-<p>=== Problems &amp; solutions</p>
-</div>
-<div class="paragraph">
-<p>==== <code>dtcw</code> doesn&#8217;t run</p>
-</div>
-<div class="paragraph">
-<p>You might get an error similiar to this one:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code>./dtcw local tasks --group=doctoolchain
-./dtcw: line 1: syntax error near unexpected token `newline'
-./dtcw: line 1: `&lt;!DOCTYPE html&gt;'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If you see that, it&#8217;s likely that the wrapper didn&#8217;t download correctly.
-You can expect that an HTML page was downloaded instead of the wrapper.
-Please try to redownload the wrapper.</p>
-</div>
-<div class="paragraph">
-<p>==== docker throws and error with <code>dtcw</code></p>
-</div>
-<div class="paragraph">
-<p>On windows you might get the following error</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code>Error response from daemon: user declined directory sharing C:\Users\path_to_my_folder</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This means that docker wanted to share the named folder (possibly the repo) but didn&#8217;t have the rights. This means you have to share the folder yourself on docker.
-Go to docker dashboard &#8594; settings &#8594; Resources &#8594; FileSharing. Add required folder and hit Apply &amp; Restart.</p>
-</div>
-<div class="paragraph">
-<p>==== Incompatible Java version</p>
-</div>
-<div class="paragraph">
-<p>You may see that docToolchain starts but crashes with a stacktrace that starts like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code>* What went wrong:
-Could not compile settings file '/Users/falk/.doctoolchain/docToolchain-2.0.0/settings.gradle'.
-&gt; startup failed:
-  General error during semantic analysis: Unsupported class file major version 61
+<pre class="prettyprint highlight"><code>dtcw - docToolchain wrapper V0.31
+docToolchain V2.0.5
+local java JDK found
+use /home/gitpod/.doctoolchain/jdk as JDK
 
-  java.lang.IllegalArgumentException: Unsupported class file major version 61</code></pre>
+docker available
+home folder exists
+use local homefolder install /home/gitpod/.doctoolchain/
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3489m
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/6.9.2/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build
+
+&gt; Task :publishToConfluence
+publish /workspace/publishToConfluenceDemo/build/html5/arc42/arc42.html
+arc42
+Start getting headers
+&gt; created page 2033844225
+1. Introduction and Goals
+Start getting headers
+    image: ../images/01_2_iso-25010-topics-EN.png
+allPages already retrieved
+&gt; created page 2033909761
+Start getting headers
+2. Architecture Constraints
+Start getting headers
+allPages already retrieved
+&gt; created page 2033975297
+3. System Scope and Context
+Start getting headers
+allPages already retrieved
+&gt; created page 2034008065
+4. Solution Strategy
+Start getting headers
+allPages already retrieved
+&gt; created page 2034040833
+5. Building Block View
+Start getting headers
+    image: ../images/05_building_blocks-EN.png
+allPages already retrieved
+&gt; created page 2034073601
+Start getting headers
+6. Runtime View
+Start getting headers
+allPages already retrieved
+&gt; created page 2034139137
+7. Deployment View
+Start getting headers
+allPages already retrieved
+&gt; created page 2034106374
+8. Cross-cutting Concepts
+Start getting headers
+    image: ../images/08-Crosscutting-Concepts-Structure-EN.png
+allPages already retrieved
+&gt; created page 2034139152
+Start getting headers
+9. Architecture Decisions
+Start getting headers
+allPages already retrieved
+&gt; created page 2034040848
+10. Quality Requirements
+Start getting headers</code></pre>
 </div>
 </div>
+</div>
+</details>
 <div class="paragraph">
-<p>In this case, you&#8217;ve got an incompatible version of Java.
-<code>dtcw</code> tries to check the Java version up front by running  <code>java --version</code>, but Gradle sometimes picks up a different version.
-If you get a similar error, try reinstalling a compatible Java version.</p>
+<p>This command will first run the task <code>generateHTML</code> and then create one Confluence page for each arc42-chapter.</p>
 </div>
+<div class="imageblock center">
+<div class="content">
+<img src="images/070-fourth.png" alt="070 fourth" width="80%">
 </div>
 </div>
 </div>
@@ -719,11 +797,11 @@ If you get a similar error, try reinstalling a compatible Java version.</p>
     <button class="feedback--answer feedback--answer-yes">Yes</button>
     <button class="feedback--answer feedback--answer-no">No</button>
     <p class="feedback--response feedback--response-yes">
-        Glad to hear it! Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27Install+docToolchain%27%20%F0%9F%91%8D&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:020_tutorial/010_Install.adoc">tell us
+        Glad to hear it! Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27%20%F0%9F%91%8D&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:020_tutorial/070_publishToConfluence.adoc">tell us
     how we can improve</a>.
     </p>
     <p class="feedback--response feedback--response-no">
-        Sorry to hear that. Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27Install+docToolchain%27%20%F0%9F%91%8E&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:020_tutorial/010_Install.adoc">tell
+        Sorry to hear that. Please <a href="https://github.com/docToolchain/docToolchain/issues/new?title=Docs%3A+Feedback+for+%27publishToConfluence%27%20%F0%9F%91%8E&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:020_tutorial/070_publishToConfluence.adoc">tell
     us how we can improve</a>.
     </p>
 </div>
